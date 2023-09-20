@@ -90,7 +90,7 @@
           <div class="content-wrapper">
            
             <!-- Content Section Begin -->
-			<tiles:insertAttribute name="Content"/>
+			<tiles:insertAttribute name="content"/>
 			<!-- Content Section End -->
 
         <!-- Footer Section Begin -->

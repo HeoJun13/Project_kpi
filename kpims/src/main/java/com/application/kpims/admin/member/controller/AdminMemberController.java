@@ -29,7 +29,7 @@ public class AdminMemberController {
 	@GetMapping("/login")
 	public ModelAndView login() throws Exception {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/admin/member/login");
+		mv.setViewName("/login");
 		return mv;
 	}
 	@PostMapping("/login")

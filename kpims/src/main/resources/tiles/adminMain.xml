@@ -10,7 +10,7 @@
 	
 
 	<definition name="/admin/project/main" extends="baseLayout">
-		<put-attribute name="Content" value="/WEB-INF/views/adminBody/content.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/adminBody/content.jsp" />
 	</definition>
 	
 	

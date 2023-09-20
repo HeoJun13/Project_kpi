@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/admin/project")
-public class mainController {
+public class MainController {
 	
 	@GetMapping("/main")
 	public ModelAndView main() throws Exception {
