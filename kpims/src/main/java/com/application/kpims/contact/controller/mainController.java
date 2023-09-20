@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/project")
+@RequestMapping("/admin/project")
 public class mainController {
 	
 	@GetMapping("/main")
-	public ModelAndView main() {
+	public ModelAndView main() throws Exception {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/kpi/main");
+		mv.setViewName("/admin/project/main");
 		
 		return mv;
 	}
