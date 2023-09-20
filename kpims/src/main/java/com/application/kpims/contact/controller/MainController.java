@@ -12,7 +12,7 @@ public class MainController {
 	@GetMapping("/main")
 	public ModelAndView main() throws Exception {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/admin/project/main");
+		mv.setViewName("/project/main");
 		
 		return mv;
 	}

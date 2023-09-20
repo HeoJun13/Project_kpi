@@ -27,10 +27,8 @@ public class AdminMemberController {
 	private AdminMemberService adminMemberService;
 	
 	@GetMapping("/login")
-	public ModelAndView login() throws Exception {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/login");
-		return mv;
+	public ModelAndView login() throws Exception{
+		return new ModelAndView("adminBody/login");
 	}
 	@PostMapping("/login")
 	public ResponseEntity<Object> login(AdminDTO adminDTO, HttpServletRequest request) throws Exception {
@@ -46,7 +44,7 @@ public class AdminMemberController {
 			
 			jsScript  = "<script>";
 			jsScript += " alert('로그인 되었습니다.');";
-			jsScript += " location.href='" + request.getContextPath() + "/';";
+			jsScript +=	"location.href='content';";
 			jsScript += " </script>";
 			
 		}

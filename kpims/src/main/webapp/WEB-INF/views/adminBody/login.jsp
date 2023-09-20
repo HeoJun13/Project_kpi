@@ -137,16 +137,16 @@
                       </g>
                     </svg>
                   </span>
-                  <span class="app-brand-text demo text-body fw-bolder">Sneat</span>
+                  <span class="app-brand-text demo text-body fw-bolder">보고가</span>
                 </a>
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2">보고가👋</h4>
+              <h4 class="mb-2">환영합니다! 관리자님 👋</h4>
               <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
               <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
                 <div class="mb-3">
-                  <label for="email" class="form-label">Email@****.com</label>
+                  <label for="email" class="form-label">아이디</label>
                   <input
                     type="text"
                     class="form-control"
@@ -158,7 +158,7 @@
                 </div>
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
-                    <label class="form-label" for="password">Password</label>
+                    <label class="form-label" for="password">비밀번호</label>
                     <a href="auth-forgot-password-basic.html">
                       <small>비밀번호 찾기</small>
                     </a>
@@ -202,14 +202,7 @@
     <!-- / Content -->
 
 
-    <div class="buy-now">
-      <a
-        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-        target="_blank"
-        class="btn btn-danger btn-buy-now"
-        >Upgrade to Pro</a
-      >
-    </div>
+  
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->

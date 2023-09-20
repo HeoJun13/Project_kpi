@@ -131,7 +131,7 @@
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Account Settings">Account Settings</div>
+                <div data-i18n="Account Settings">상품관리</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
@@ -154,7 +154,7 @@
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
-                <div data-i18n="Authentications">Authentications</div>
+                <div data-i18n="Authentications">주문배송관리</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
@@ -177,7 +177,7 @@
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-cube-alt"></i>
-                <div data-i18n="Misc">Misc</div>
+                <div data-i18n="Misc">재고관리</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
@@ -198,7 +198,7 @@
             <li class="menu-item">
               <a href="cards-basic.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">Cards</div>
+                <div data-i18n="Basic">매출관리</div>
               </a>
             </li>
             <!-- User interface -->
@@ -339,7 +339,7 @@
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Form Elements">Form Elements</div>
+                <div data-i18n="Form Elements">고객센터 관리</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
