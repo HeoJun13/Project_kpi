@@ -13,8 +13,8 @@ public class AdminMemberDAOImpl implements AdminMemberDAO {
 	private SqlSession sqlSession;
 
 	@Override
-	public AdminMemberDTO selectAdminLogin(AdminMemberDTO adminDTO) throws Exception {
-		return sqlSession.selectOne("admin.member.selectAdminLogin" , adminDTO);
+	public AdminMemberDTO selectAdminLogin(AdminMemberDTO adminMemberDTO) throws Exception {
+		return sqlSession.selectOne("admin.member.selectAdminLogin" , adminMemberDTO);
 	}
 	
 }

@@ -3,6 +3,7 @@ package com.application.kpims.admin.member.controller;
 import java.net.http.HttpHeaders;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class AdminMemberController {
 	}
 	
 	@PostMapping("/login")
-	public @ResponseBody String login(AdminMemberDTO adminMemberDTO, HttpServletRequest request) throws Exception {
+	public @ResponseBody String login(AdminMemberDTO adminMemberDTO, HttpServletRequest request , HttpServletResponse response) throws Exception {
 		
 		String jsScript = "";
 		
@@ -41,10 +42,8 @@ public class AdminMemberController {
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("memberId", adminMemberDTO.getAdminId());
-			session.setMaxInactiveInterval(60 * 30);
 			
 			jsScript  = "<script>";
-			jsScript += " alert('로그인 되었습니다.');";
 			jsScript += " location.href='" + request.getContextPath() + "/admin/project/main';";
 			jsScript += " </script>";
 			
@@ -57,6 +56,7 @@ public class AdminMemberController {
 			jsScript += " </script>";
 			
 		}
+		
 		
 		return jsScript;
 	}

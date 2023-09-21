@@ -7,14 +7,11 @@ import com.application.kpims.admin.member.dao.AdminMemberDAO;
 import com.application.kpims.admin.member.dto.AdminMemberDTO;
 
 @Service
-
 public class AdminMemberServiceImpl implements AdminMemberService {
 	
 	@Autowired
 	private AdminMemberDAO adminMemberDAO;
 	
-	//@Autowired
-	//private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@Override
 	public boolean adminlogin(AdminMemberDTO adminMemberDTO) throws Exception {
@@ -22,6 +19,7 @@ public class AdminMemberServiceImpl implements AdminMemberService {
 		if (adminMemberDAO.selectAdminLogin(adminMemberDTO) != null) {
 			return true;
 		}
+		
 		return false;
 	}
 

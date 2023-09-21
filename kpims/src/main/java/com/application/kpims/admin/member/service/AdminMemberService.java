@@ -4,6 +4,6 @@ import com.application.kpims.admin.member.dto.AdminMemberDTO;
 
 public interface AdminMemberService {
 
-	public boolean adminlogin(AdminMemberDTO adminDTO) throws Exception;
+	public boolean adminlogin(AdminMemberDTO adminMemberDTO) throws Exception;
 
 }
