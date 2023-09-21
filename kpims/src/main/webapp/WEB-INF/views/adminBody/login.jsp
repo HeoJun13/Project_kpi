@@ -81,7 +81,7 @@
             <div class="card-body">
               <!-- Logo -->
               <div class="app-brand justify-content-center">
-                <a href="index.html" class="app-brand-link gap-2">
+                <a href="content.jsp" class="app-brand-link gap-2">
                   <span class="app-brand-logo demo">
                     <svg
                       width="25"
@@ -144,7 +144,7 @@
               <h4 class="mb-2">환영합니다! 관리자님 👋</h4>
               <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
-              <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+              <form id="formAuthentication" class="mb-3" action="${contextPath }/admin/member/login" method="POST">
                 <div class="mb-3">
                   <label for="email" class="form-label">아이디</label>
                   <input
@@ -182,6 +182,7 @@
                   </div>
                 </div>
                 <div class="mb-3">
+                 <a href="${contextPath }/admin/member/login"><i class="mb-3"></i></a>
                   <button class="btn btn-primary d-grid w-100" type="submit">로그인</button>
                 </div>
               </form>

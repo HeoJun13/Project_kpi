@@ -1,6 +1,9 @@
 package com.application.kpims.admin.member.dto;
 
-public class AdminDTO {
+import org.springframework.stereotype.Component;
+
+@Component
+public class AdminMemberDTO {
 	
 	private String adminId;
 	private String passwd;
@@ -22,6 +25,10 @@ public class AdminDTO {
 	}
 	public void setJoinDt(String joinDt) {
 		this.joinDt = joinDt;
+	}
+	@Override
+	public String toString() {
+		return "AdminDTO [adminId=" + adminId + ", passwd=" + passwd + ", joinDt=" + joinDt + "]";
 	}
 	
 	

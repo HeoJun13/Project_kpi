@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.application.kpims.admin.member.dao.AdminMemberDAO;
-import com.application.kpims.admin.member.dto.AdminDTO;
+import com.application.kpims.admin.member.dto.AdminMemberDTO;
 
 @Service
 
@@ -17,9 +17,9 @@ public class AdminMemberServiceImpl implements AdminMemberService {
 	//private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@Override
-	public boolean adminlogin(AdminDTO adminDTO) throws Exception {
+	public boolean adminlogin(AdminMemberDTO adminMemberDTO) throws Exception {
 		
-		if (adminMemberDAO.selectAdminLogin(adminDTO) != null) {
+		if (adminMemberDAO.selectAdminLogin(adminMemberDTO) != null) {
 			return true;
 		}
 		return false;

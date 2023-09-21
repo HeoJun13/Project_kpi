@@ -1,10 +1,10 @@
 package com.application.kpims.admin.member.dao;
 
-import com.application.kpims.admin.member.dto.AdminDTO;
+import com.application.kpims.admin.member.dto.AdminMemberDTO;
 
 public interface AdminMemberDAO {
 
-	public AdminDTO selectAdminLogin(AdminDTO adminDTO) throws Exception;
+	public AdminMemberDTO selectAdminLogin(AdminMemberDTO adminDTO) throws Exception;
 
 	
 

@@ -1,9 +1,9 @@
 package com.application.kpims.admin.member.service;
 
-import com.application.kpims.admin.member.dto.AdminDTO;
+import com.application.kpims.admin.member.dto.AdminMemberDTO;
 
 public interface AdminMemberService {
 
-	public boolean adminlogin(AdminDTO adminDTO) throws Exception;
+	public boolean adminlogin(AdminMemberDTO adminDTO) throws Exception;
 
 }

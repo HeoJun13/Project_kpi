@@ -13,9 +13,10 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.application.kpims.admin.member.dto.AdminDTO;
+import com.application.kpims.admin.member.dto.AdminMemberDTO;
 import com.application.kpims.admin.member.service.AdminMemberService;
 import com.sun.net.httpserver.HttpHandler;
 
@@ -30,21 +31,21 @@ public class AdminMemberController {
 	public ModelAndView login() throws Exception{
 		return new ModelAndView("adminBody/login");
 	}
+	
 	@PostMapping("/login")
-	public ResponseEntity<Object> login(AdminDTO adminDTO, HttpServletRequest request) throws Exception {
+	public @ResponseBody String login(AdminMemberDTO adminMemberDTO, HttpServletRequest request) throws Exception {
 		
 		String jsScript = "";
 		
-		if (adminMemberService.adminlogin(adminDTO)) {
+		if (adminMemberService.adminlogin(adminMemberDTO)) {
 			
 			HttpSession session = request.getSession();
-			session.setAttribute("memberId", adminDTO.getAdminId());
-			session.setAttribute("role", "admin");
+			session.setAttribute("memberId", adminMemberDTO.getAdminId());
 			session.setMaxInactiveInterval(60 * 30);
 			
 			jsScript  = "<script>";
 			jsScript += " alert('로그인 되었습니다.');";
-			jsScript +=	"location.href='content';";
+			jsScript += " location.href='" + request.getContextPath() + "/admin/project/main';";
 			jsScript += " </script>";
 			
 		}
@@ -57,8 +58,7 @@ public class AdminMemberController {
 			
 		}
 		
-		
-		return null;
+		return jsScript;
 	}
 	
 
