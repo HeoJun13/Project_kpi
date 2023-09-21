@@ -50,7 +50,15 @@ public class AdminMemberController {
 		
 		
 		return mv;
+	}
+	
+	@RequestMapping("logout.do")
+	public ModelAndView logout(HttpSession session , ModelAndView mv) {
+		adminMemberService.logout(session);
+		mv.setViewName("adminBody/login");
+		mv.addObject("message" , "logout");
 		
-
+		return mv;
+		
 	}
 }

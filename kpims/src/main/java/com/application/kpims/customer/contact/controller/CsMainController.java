@@ -20,7 +20,7 @@ public class CsMainController {
 	}
 	
 	@GetMapping("/register")
-	public ModelAndView login() throws Exception{
+	public ModelAndView register() throws Exception{
 		return new ModelAndView("/CsBody/member/register");
 	}
 

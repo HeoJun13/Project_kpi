@@ -24,6 +24,13 @@ public class AdminMemberServiceImpl implements AdminMemberService {
 		}
 		return name;
 	}
+
+	@Override
+	public void logout(HttpSession sessiong) {
+		sessiong.invalidate();
+	}
+
+	
 	
 
 

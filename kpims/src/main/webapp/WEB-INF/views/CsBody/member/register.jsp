@@ -57,36 +57,22 @@
 		<!-- End Header/Navigation -->
 
 		<!-- Start Hero Section -->
-			<div class="hero">
 				<div class="container">
 					<div class="row justify-content-between">
-						<div class="col-lg-5">
-							<div class="intro-excerpt">
-								<h1>회원가입</h1>
-							</div>
-						</div>
-						<div class="col-lg-7">
-							
-						</div>
 					</div>
 				</div>
-			</div>
 		<!-- End Hero Section -->
 
-		<div class="untree_co-section">
 		    <div class="container">
 		      <div class="row mb-5">
 		        <div class="col-md-12">
-		          <div class="border p-4 rounded" role="alert">
-		            Returning customer? <a href="#">Click here</a> to login
-		          </div>
 		        </div>
 		      </div>
 		      <div align="center">
 		        <div class="col-md-6 mb-5 mb-md-0">
-		          <h2 class="h3 mb-3 text-black">Billing Details</h2>
 		          <div class="p-3 p-lg-5 border bg-white">
 		            <div class="form-group">
+		            <h2 class="h3 mb-3 text-black">회원가입</h2>
 		              <label for="c_country" class="text-black">Country <span class="text-danger">*</span></label>
 		              <select id="c_country" class="form-control">
 		                <option value="1">Select a country</option>    
@@ -255,7 +241,6 @@
 		      </div>
 		      <!-- </form> -->
 		    </div>
-		  </div>
 
 		<!-- Start Footer Section -->
 		<footer class="footer-section">
