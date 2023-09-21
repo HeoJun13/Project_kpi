@@ -4,10 +4,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class AdminMemberDTO {
-	
 	private String adminId;
 	private String passwd;
 	private String joinDt;
+	
 	public String getAdminId() {
 		return adminId;
 	}
@@ -28,7 +28,7 @@ public class AdminMemberDTO {
 	}
 	@Override
 	public String toString() {
-		return "AdminDTO [adminId=" + adminId + ", passwd=" + passwd + ", joinDt=" + joinDt + "]";
+		return "AdminMemberDTO [adminId=" + adminId + ", passwd=" + passwd + ", joinDt=" + joinDt + "]";
 	}
 	
 	

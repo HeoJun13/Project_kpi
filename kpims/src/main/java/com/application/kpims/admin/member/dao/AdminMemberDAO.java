@@ -4,8 +4,5 @@ import com.application.kpims.admin.member.dto.AdminMemberDTO;
 
 public interface AdminMemberDAO {
 
-	public AdminMemberDTO selectAdminLogin(AdminMemberDTO adminMemberDTO) throws Exception;
-
-	
-
+	public String selectAdminLogin(AdminMemberDTO adminMemberDTO) throws Exception;
 }

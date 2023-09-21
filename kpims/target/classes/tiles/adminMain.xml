@@ -3,13 +3,13 @@
 		
 			<tiles-definitions>
 			
-				<definition name="basicLayoout" 	   template="/WEB-INF/views/adminLayout/indexLayout/layout.jsp">		
+				<definition name="basicLayout" 	   template="/WEB-INF/views/adminLayout/indexLayout/layout.jsp">		
 			 		<put-attribute name="nav" value="/WEB-INF/views/adminLayout/indexLayout/nav.jsp"/>	
 			 		<put-attribute name="aside" value="/WEB-INF/views/adminLayout/indexLayout/aside.jsp"/>	
 			 		<put-attribute name="footer" value="/WEB-INF/views/adminLayout/indexLayout/footer.jsp"/> 	
 			 	</definition>
 			 	
-			 	<definition name="/project/main"  extends="basicLayoout">	
+			 	<definition name="/project/main"  extends="basicLayout">	
 			 		<put-attribute name="content" value="/WEB-INF/views/adminBody/content.jsp"/>	
 			 	</definition>
 			

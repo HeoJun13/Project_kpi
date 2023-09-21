@@ -1,5 +1,8 @@
 package com.application.kpims.admin.member.service;
 
+import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,18 +12,19 @@ import com.application.kpims.admin.member.dto.AdminMemberDTO;
 @Service
 public class AdminMemberServiceImpl implements AdminMemberService {
 	
-	@Autowired
+	@Inject
 	private AdminMemberDAO adminMemberDAO;
-	
 
 	@Override
-	public boolean adminlogin(AdminMemberDTO adminMemberDTO) throws Exception {
-		
-		if (adminMemberDAO.selectAdminLogin(adminMemberDTO) != null) {
-			return true;
+	public String adminlogin(AdminMemberDTO adminMemberDTO, HttpSession session) throws Exception {
+		String name = adminMemberDAO.selectAdminLogin(adminMemberDTO);
+		if (name != null) { //세션 변수 저장
+			session.setAttribute("adminId", adminMemberDTO.getAdminId());
+			session.setAttribute("name", name);
 		}
-		
-		return false;
+		return name;
 	}
+	
+
 
 }

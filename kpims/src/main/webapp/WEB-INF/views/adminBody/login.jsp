@@ -142,33 +142,29 @@
               </div>
               <!-- /Logo -->
               <h4 class="mb-2">환영합니다! 관리자님 👋</h4>
-              <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
-              <form id="formAuthentication" class="mb-3" action="${contextPath }/admin/member/login" method="POST">
+              <form id="adminId" class="mb-3" action="${contextPath }/admin/member/login" method="post">
                 <div class="mb-3">
-                  <label for="email" class="form-label">아이디</label>
+                  <label class="form-label">아이디</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="email"
-                    name="email-username"
-                    placeholder="Enter your email or username"
+                    name="adminId"
+                    id="adminId"
+                    placeholder="AdminName"
                     autofocus
                   />
                 </div>
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
                     <label class="form-label" for="password">비밀번호</label>
-                    <a href="auth-forgot-password-basic.html">
-                      <small>비밀번호 찾기</small>
-                    </a>
                   </div>
                   <div class="input-group input-group-merge">
                     <input
                       type="password"
-                      id="password"
+                      id="passwd"
                       class="form-control"
-                      name="password"
+                      name="passwd"
                       placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                       aria-describedby="password"
                     />
@@ -177,8 +173,10 @@
                 </div>
                 <div class="mb-3">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="remember-me" />
-                    <label class="form-check-label" for="remember-me"> Remember Me </label>
+                  	<c:if test="${message == 'error'}">
+                  <div style="color:red;"> 아이디 또는 비밀번호가 일치하지 않습니다.
+                  </div>
+                  </c:if>
                   </div>
                 </div>
                 <div class="mb-3">
@@ -186,13 +184,6 @@
                   <button class="btn btn-primary d-grid w-100" type="submit">로그인</button>
                 </div>
               </form>
-
-              <p class="text-center">
-                <span>New on our platform?</span>
-                <a href="auth-register-basic.html">
-                  <span>Create an account</span>
-                </a>
-              </p>
             </div>
           </div>
           <!-- /Register -->

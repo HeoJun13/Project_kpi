@@ -3,12 +3,12 @@
 		
 			<tiles-definitions>
 			
-				<definition name="basicLayoout" 	   template="/WEB-INF/views/CsLayout/layout.jsp">		
+				<definition name="CsbasicLayout" 	   template="/WEB-INF/views/CsLayout/layout.jsp">		
 			 		<put-attribute name="header" value="/WEB-INF/views/CsLayout/header.jsp"/>	
 			 		<put-attribute name="footer" value="/WEB-INF/views/CsLayout/footer.jsp"/> 	
 			 	</definition>
 			 	
-			 	<definition name="/costomer/main"  extends="basicLayoout">	
+			 	<definition name="/costomer/main"  extends="CsbasicLayout">	
 			 		<put-attribute name="contact" value="/WEB-INF/views/CsBody/index/contact.jsp"/>	
 			 	</definition>
 			

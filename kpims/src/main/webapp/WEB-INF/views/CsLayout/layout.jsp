@@ -25,15 +25,15 @@
 	<body>
 
 		<!-- Start Header/Navigation -->
-		 	<tiles:insertAttribute name="header"/>
+		 	<tiles:insertAttribute name="header" ignore="true"/>
 		<!-- End Header/Navigation -->
 
 		<!-- nav Section Begin -->
-	  		 <tiles:insertAttribute name="contact"/>
+	  		 <tiles:insertAttribute name="contact" ignore="true"/>
 	   	<!-- nav Section End -->
 
 		<!-- Start Footer Section -->
-			<tiles:insertAttribute name="footer"/>
+			<tiles:insertAttribute name="footer" ignore="true"/>
 		<!-- End Footer Section -->	
 
 
