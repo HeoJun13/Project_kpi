@@ -19,9 +19,5 @@ public class CsMainController {
 		return mv;
 	}
 	
-	@GetMapping("/register")
-	public ModelAndView register() throws Exception{
-		return new ModelAndView("/CsBody/member/register");
-	}
 
 }
