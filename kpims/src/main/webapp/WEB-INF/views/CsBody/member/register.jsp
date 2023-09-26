@@ -104,8 +104,8 @@
 		            <div class="form-group row">
 		              <div class="col-md-12">
                         <p>성별 <span style="color:red;"> </span>
-                           남 <input type="radio" name="sex" value="m" checked>
-                           여 <input type="radio" name="sex" value="w">
+			                           남 <input type="radio" name="sex" value="m" checked>
+			                           여 <input type="radio" name="sex" value="w">
                         </p>
                       </div>
 		            </div>

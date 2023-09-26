@@ -50,7 +50,7 @@
 						<a class="product-item" href="cart.html">
 							<img src="${contextPath }/resources/CsBoostrap/images/product-1.png" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Nordic Chair</h3>
-							<strong class="product-price">$50.00</strong>
+							<strong class="product-price">50,000원</strong>
 
 							<span class="icon-cross">
 								<img src="images/cross.svg" class="img-fluid">
@@ -64,7 +64,7 @@
 						<a class="product-item" href="cart.html">
 							<img src="${contextPath }/resources/CsBoostrap/images/product-2.png" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Kruzo Aero Chair</h3>
-							<strong class="product-price">$78.00</strong>
+							<strong class="product-price">78,000원</strong>
 
 							<span class="icon-cross">
 								<img src="images/cross.svg" class="img-fluid">
@@ -78,7 +78,7 @@
 						<a class="product-item" href="cart.html">
 							<img src="${contextPath }/resources/CsBoostrap/images/product-3.png" class="img-fluid product-thumbnail">
 							<h3 class="product-title">Ergonomic Chair</h3>
-							<strong class="product-price">$43.00</strong>
+							<strong class="product-price">43,000원</strong>
 
 							<span class="icon-cross">
 								<img src="images/cross.svg" class="img-fluid">

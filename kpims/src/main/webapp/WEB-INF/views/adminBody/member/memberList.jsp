@@ -16,9 +16,19 @@ function gerateMemberExcelExport() {
 </script>
 </head>
 <body>
-<h3 align="center">회원 리스트</h3>
-	<table border="1" style="align-content: center">
-			<tr>
+<div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">회원관리 /</span> 회원리스트</h4>
+
+              <!-- Basic Bootstrap Table -->
+              <div class="card">
+                <h5 class="card-header"></h5>
+                <div class="table-responsive text-nowrap">
+                  <table class="table">
+                    <thead>
+                      <tr>
 				<td>#</td>
 				<td>회원아이디</td>
 				<td>회원이름</td>
@@ -27,7 +37,8 @@ function gerateMemberExcelExport() {
 				<td>이메일</td>
 				<td>가입일</td>
 			</tr>
-			<tbody id="memberList">
+			</thead>
+			<tbody id="memberList" class="table-border-bottom-0">
 				<c:choose>
 					<c:when test="${empty memberList}">
 						<tr>
@@ -41,7 +52,9 @@ function gerateMemberExcelExport() {
               		 		<h6>${i.count }</h6>
                        </td>
                     		<td class="">
-                           <h6><a href="${contextPath }/myPage/myInfo?memberId=${memberDTO.memberId}">${memberDTO.memberId} </a></h6>
+                           <!--  <h6><a href="${contextPath }/myPage/myInfo?memberId=${memberDTO.memberId}">${memberDTO.memberId} </a></h6>-->
+                          
+                       <h6><i class="fab fa-angular fa-lg text-danger me-3"></i>${memberDTO.memberId}</h6>
                        </td>
                        <td>${memberDTO.memberNm }</td>
                        <td>${memberDTO.nickname }</td>
@@ -72,6 +85,9 @@ function gerateMemberExcelExport() {
 		<input type="button" value="삭제" onclick="location.href='${contextPath}/admin/member/mainMember'" />
 		<input type="button" value="수정" onclick="location.href='${contextPath}/admin/member/mainMember'" />
 	</div>
-	
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>
