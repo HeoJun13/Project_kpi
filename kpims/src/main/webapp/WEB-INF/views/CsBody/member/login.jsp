@@ -19,36 +19,22 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 		<link href="${contextPath }/resources/CsBoostrap/css/tiny-slider.css" rel="stylesheet">
 		<link href="${contextPath }/resources/CsBoostrap/css/style.css" rel="stylesheet">
-		<title>login</title>
+		<title>Login</title>
 	</head>
 <body>
 		
 	<!-- Start Header/Navigation -->
 		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
-			<div class="container">
-				<a class="navbar-brand" href="index.html">Furni<span>.</span></a>
+			<div class="container" align="right">
+				<a class="navbar-brand" href="${contextPath }/customer/project/main" >Bogogah<span>.</span></a>
 
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<div class="collapse navbar-collapse" id="navbarsFurni">
-					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="nav-item ">
-							<a class="nav-link" href="index.html">Home</a>
-						</li>
-						<li><a class="nav-link" href="shop.html">Shop</a></li>
-						<li><a class="nav-link" href="about.html">About us</a></li>
-						<li><a class="nav-link" href="services.html">Services</a></li>
-						<li><a class="nav-link" href="blog.html">Blog</a></li>
-						<li><a class="nav-link" href="contact.html">Contact us</a></li>
-					</ul>
-
-					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<li><a class="nav-link" href="#"><img src="${contextPath }/resources/CsBoostrap/images/user.svg"></a></li>
-						<li><a class="nav-link" href="cart.html"><img src="${contextPath }/resources/CsBoostrap/images/cart.svg"></a></li>
-					</ul>
+				<div class="collapse navbar-collapse" id="navbarsFurni" >
+					
 				</div>
 			</div>
 				
@@ -65,6 +51,7 @@
 		<!-- End Hero Section -->
 
 		    <div class="container">
+		    <form id="memberId" class="mb-3" action="${contextPath }/member/login" method="post">
 		      <div class="row mb-5">
 		        <div class="col-md-12">
 		        </div>
@@ -83,14 +70,24 @@
 		                <input type="text" class="form-control" id="passwd" name="passwd" placeholder="비밀번호">
 		              </div>
 		            </div>&emsp;
-		          <tr>
-					<td colspan="2" align="left">
-						<input type="submit" value="로그인">
-					</td>
-				  </tr>
+		          <div class="col-md-12">
+		           <div class="form-group">
+                  	<c:if test="${message == 'error'}">
+                 	 <div style="color:red;"> 아이디 또는 비밀번호가 일치하지 않습니다.
+                  </div>
+                  	</c:if>
+                  	 </div>
+                  	   </div>
+                  		<a href="${contextPath }/member/login"><i class="col-md-12"></i></a>
+						<button class="nav-link" type="submit">로그인</button>
+						<section>
+						<a class="">로그인</a>
+						<a class="" href="${contextPath }/member/register">회원가입</a>
+						</section>
 		                </div>
 		              </div>
 		            </div>
+		            </form>
 		          </div>
 		        </div>
 		        <div class="col-md-6">

@@ -20,36 +20,23 @@
 		<link href="${contextPath }/resources/CsBoostrap/css/tiny-slider.css" rel="stylesheet">
 		<link href="${contextPath }/resources/CsBoostrap/css/style.css" rel="stylesheet">
 		<title>Furni Free Bootstrap 5 Template for Furniture and Interior Design Websites by Untree.co </title>
+		
 	</head>
 
 	<body>
-
+		<form name="registerForm" action="${contextPath }/member/register" method="post">
 		<!-- Start Header/Navigation -->
 		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
-			<div class="container">
-				<a class="navbar-brand" href="index.html">Furni<span>.</span></a>
+			<div class="container" align="right">
+				<a class="navbar-brand" href="${contextPath }/customer/project/main" >Bogogah<span>.</span></a>
 
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<div class="collapse navbar-collapse" id="navbarsFurni">
-					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="nav-item ">
-							<a class="nav-link" href="index.html">Home</a>
-						</li>
-						<li><a class="nav-link" href="shop.html">Shop</a></li>
-						<li><a class="nav-link" href="about.html">About us</a></li>
-						<li><a class="nav-link" href="services.html">Services</a></li>
-						<li><a class="nav-link" href="blog.html">Blog</a></li>
-						<li><a class="nav-link" href="contact.html">Contact us</a></li>
-					</ul>
-
-					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<li><a class="nav-link" href="#"><img src="${contextPath }/resources/CsBoostrap/images/user.svg"></a></li>
-						<li><a class="nav-link" href="cart.html"><img src="${contextPath }/resources/CsBoostrap/images/cart.svg"></a></li>
-					</ul>
+				<div class="collapse navbar-collapse" id="navbarsFurni" >
+					
 				</div>
 			</div>
 				
@@ -74,13 +61,25 @@
 		            <div class="form-group">
 		            <h2 class="h4 mb-3 text-black">회원정보를 입력해주세요</h2>
 		              <label for="memberId" class="text-black"><span class="text-danger"></span></label>
-		             <input type="text" class="form-control" id="memberId" name="memberId"  placeholder="아이디">
-		             <input type="button" id="IdCheck" value="중복확인"  style="width: 20%; padding-left: 0">
+		             <input type="email" class="form-control" id="memberId" name="memberId"  placeholder="이메일">
+		             <button type="button" id="btn" style="width: 20%; padding-left: 0">이메일 중복확인</button>
+		             <p id="idcheck"></p>
 		            </div>
+		            <div class="form-group row">
+		              <div class="col-md-12">
+		                <label for="nickname" class="text-black"><span class="text-danger"></span></label>
+		                <input type="text" class="form-control" id="nickname" name=nickname placeholder="닉네임">
+		             	<!--   <c:if test="${message=='fault'}">
+							<p id="nncheck">중복된 닉네임입니다.</p>
+						</c:if>	 -->
+		              </div>
+		            </div>
+		            
 		            <div class="form-group row">
 		              <div class="col-md-12">
 		                <label for="passwd" class="text-black"><span class="text-danger"></span></label>
 		                <input type="text" class="form-control" id="passwd" name="passwd" placeholder="비밀번호">
+		                <p id="idcheck"></p>
 		              </div>
 		            </div>
 
@@ -90,27 +89,31 @@
 		                <input type="text" class="form-control" id="passwdCheck" name="passwdCheck" placeholder="비밀번호 확인">
 		              </div>
 		            </div>
-
+		            <!--   <c:if test="${message == 'WdnotFit'}">
+                  <div style="color:red;"> 비밀번호가 일치하지 않습니다.
+                  </div>
+                   </c:if> -->
 		            <div class="form-group row">
 		              <div class="col-md-12">
 		                <label for="memberNm" class="text-black"><span class="text-danger"></span></label>
 		                <input type="text" class="form-control" id="memberNm" name="memberNm" placeholder="이름">
+		                <p id="Nmcheck"></p>
 		              </div>
 		            </div>
 		            
 		            <div class="form-group row">
 		              <div class="col-md-12">
                         <p>성별 <span style="color:red;"> </span>
-                           남 <input type="radio" name="sex" value="m">
-                           여 <input type="radio" name="sex" value="f">
+                           남 <input type="radio" name="sex" value="m" checked>
+                           여 <input type="radio" name="sex" value="w">
                         </p>
                       </div>
-                      
 		            </div>
 		            <div class="form-group row">
 		              <div class="col-md-12">
 		                <label for="hp" class="text-black"><span class="text-danger"></span></label>
 		                <input type="text" class="form-control" id="hp" name="hp" placeholder="휴대폰 번호">
+		                <p id="hpcheck"></p>
 		             	<label for="smsstsYn">
                                (선택) BMS에서 발송하는 SMS 소식을 수신합니다.
                               <input type="checkbox" id="smsstsYn" name="smsstsYn" value="Y">
@@ -123,6 +126,7 @@
 		              <div class="col-md-12">
 		                <label for="email" class="text-black"><span class="text-danger"></span></label>
 		                <input type="text" class="form-control" id="email" name="email" placeholder="이메일 주소">
+		                <p id="Emcheck"></p>
 		             	<label for="emailstsYn">
                             (선택) BMS에서 발송하는 E-mail 소식을 수신합니다.
                               <input type="checkbox" id="emailstsYn" name="emailstsYn" value="Y">
@@ -140,14 +144,14 @@
 		                  <p class="mb-3">Create an account by entering the information below. If you are a returning customer please login at the top of the page.</p>
 		                  <div class="form-group">
 		                    <label for="c_account_password" class="text-black">Account Password</label>
-		                    <input type="email" class="form-control" id="c_account_password" name="c_account_password" placeholder="">
+		                    <input type="checkbox" class="form-control" id="" name="" placeholder="">
 		                  </div>
 		                </div>
 		              </div>
 		            </div>
 		          <tr>
 					<td colspan="2" align="left">
-						<input type="submit" value="동의하고 가입하기">
+						<button type="submit">동의하고 가입하기</button>
 					</td>
 				  </tr>
 
@@ -252,9 +256,10 @@
 
 			</div>
 		</footer>
+	</form>
 		<!-- End Footer Section -->	
 
-
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 		<script src="${contextPath }/resources/CsBoostrap/js/bootstrap.bundle.min.js"></script>
 		<script src="${contextPath }/resources/CsBoostrap/js/tiny-slider.js"></script>
 		<script src="${contextPath }/resources/CsBoostrap/js/custom.js"></script>

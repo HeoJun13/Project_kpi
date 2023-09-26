@@ -83,7 +83,7 @@
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
             <li class="menu-item active">
-              <a href="index.html" class="menu-link">
+              <a href="${contextPath}/project/main" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">메인화면</div>
               </a>
@@ -98,8 +98,8 @@
 
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="layouts-without-menu.html" class="menu-link">
-                    <div data-i18n="Without menu">Without menu</div>
+                  <a href="" class="menu-link">
+                    <div data-i18n="Without menu">회원리스트</div>
                   </a>
                 </li>
                 <li class="menu-item">

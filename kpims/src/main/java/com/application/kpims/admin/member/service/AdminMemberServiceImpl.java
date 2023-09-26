@@ -27,7 +27,7 @@ public class AdminMemberServiceImpl implements AdminMemberService {
 
 	@Override
 	public void logout(HttpSession sessiong) {
-		sessiong.invalidate();
+		sessiong.invalidate(); //세션 초기화
 	}
 
 	

@@ -22,10 +22,10 @@
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
-  data-assets-path="../assets/"
+  data-assets-path="${contextPath}/resources/boostrap/"
   data-template="vertical-menu-template-free"
 >
-  <head>
+   <head>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -61,7 +61,7 @@
     <link rel="stylesheet" href="${contextPath}/resources/boostrap/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
-	<script src="${contextPath}/resources/boostrap/vendor/libs/jquery/jquery.js"></script>
+
     <!-- Helpers -->
     <script src="${contextPath}/resources/boostrap/vendor/js/helpers.js"></script>
 
@@ -97,7 +97,7 @@
 			<tiles:insertAttribute name="footer"/>
 		<!-- Footer Section End -->
 
-            <div class="content-backdrop fade"></div>
+          <div class="content-backdrop fade"></div>
           </div>
           <!-- Content wrapper -->
         </div>
@@ -120,11 +120,12 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
+    <script src="${contextPath}/resources/boostrap/vendor/libs/jquery/jquery.js"></script>
     <script src="${contextPath}/resources/boostrap/vendor/libs/popper/popper.js"></script>
     <script src="${contextPath}/resources/boostrap/vendor/js/bootstrap.js"></script>
     <script src="${contextPath}/resources/boostrap/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-    <script src="${contextPath}/resources/boostrap/assets/vendor/js/menu.js"></script>
+    <script src="${contextPath}/resources/boostrap/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->

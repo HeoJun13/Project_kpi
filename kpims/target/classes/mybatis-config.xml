@@ -9,6 +9,9 @@
 		
 		<typeAliases>
 			<typeAlias type="com.application.kpims.admin.member.dto.AdminMemberDTO" alias="AdminMemberDTO"/>
+			<typeAlias type="com.application.kpims.member.dto.MemberDTO" alias="MemberDTO"/>
 		</typeAliases>
 		
 </configuration>
+
+

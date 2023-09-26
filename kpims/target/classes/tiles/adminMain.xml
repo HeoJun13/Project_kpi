@@ -12,6 +12,9 @@
 			 	<definition name="/project/main"  extends="basicLayout">	
 			 		<put-attribute name="content" value="/WEB-INF/views/adminBody/content.jsp"/>	
 			 	</definition>
+			 	<definition name="/project/memberList"  extends="basicLayout">	
+			 		<put-attribute name="content" value="/WEB-INF/views/adminBody/member/memberList.jsp"/>	
+			 	</definition>
 			
 			</tiles-definitions>
 				

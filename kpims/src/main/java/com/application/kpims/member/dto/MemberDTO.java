@@ -9,6 +9,7 @@ public class MemberDTO {
 	
 	private String memberId;
 	private String memberNm;
+	private String nickname;
 	private String passwd;
 	private String sex;
 	private String dateBirth;
@@ -28,6 +29,12 @@ public class MemberDTO {
 	}
 	public void setMemberNm(String memberNm) {
 		this.memberNm = memberNm;
+	}
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 	public String getPasswd() {
 		return passwd;
@@ -79,10 +86,11 @@ public class MemberDTO {
 	}
 	@Override
 	public String toString() {
-		return "MemberDTO [memberId=" + memberId + ", memberNm=" + memberNm + ", passwd=" + passwd + ", sex=" + sex
-				+ ", dateBirth=" + dateBirth + ", hp=" + hp + ", smsstsYn=" + smsstsYn + ", email=" + email
-				+ ", emailstsYn=" + emailstsYn + ", joinDt=" + joinDt + "]";
+		return "MemberDTO [memberId=" + memberId + ", memberNm=" + memberNm + ", nickname=" + nickname + ", passwd="
+				+ passwd + ", sex=" + sex + ", dateBirth=" + dateBirth + ", hp=" + hp + ", smsstsYn=" + smsstsYn
+				+ ", email=" + email + ", emailstsYn=" + emailstsYn + ", joinDt=" + joinDt + "]";
 	}
+	
 	
 	
 
