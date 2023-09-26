@@ -12,4 +12,11 @@
 				ADMIN_ID = #{adminId} AND PASSWD = #{passwd}
 	</select>
 	
+	<select id="memberList" resultType="MemberDTO">
+		 SELECT  
+    				*  
+    	  FROM 
+    				MEMBER 
+	</select>
+	
 </mapper>

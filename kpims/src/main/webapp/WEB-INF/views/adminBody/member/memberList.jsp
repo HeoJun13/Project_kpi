@@ -19,35 +19,38 @@ function gerateMemberExcelExport() {
 <h3 align="center">회원 리스트</h3>
 	<table border="1" style="align-content: center">
 			<tr>
+				<td>#</td>
 				<td>회원아이디</td>
 				<td>회원이름</td>
 				<td>닉네임</td>
 				<td>휴대폰번호</td>
 				<td>이메일</td>
-				<td>주소</td>
 				<td>가입일</td>
 			</tr>
 			<tbody id="memberList">
 				<c:choose>
 					<c:when test="${empty memberList}">
-						<tr align="center">
-							<td colspan="6"><strong>조회된 회원이 없습니다.</strong></td>
-						</tr>
-					</c:when>
-					<c:otherwise>
-						<c:forEach var="memberDTO" items="${memberList}">
-							<tr>
-							<!--<td><img src="${contextPath }/member/thumbnails?fileName=${MemberDTO.profile}" width="50" height="50" alt="사진"></td> -->
-								
-								<td>${memberDTO.memberId}</td>
-								<td>${memberDTO.memberNm}</td>
-								<td>${memberDTO.nickname}</td>
-								<td>${memberDTO.hp}</td>
-								<td>${memberDTO.email}</td>
-								<td><fmt:formatDate value="${memberDTO.joinDt}" pattern="yyyy-MM-dd" /></td>
-							</tr>
-						</c:forEach>
-					</c:otherwise>
+						<tr>
+            				<td colspan="6" align="center"><h3>가입된 회원이 없습니다.</h3></td>
+            			</tr>
+            		</c:when>
+            		<c:otherwise>
+              	<c:forEach var="memberDTO" items="${memberList }" varStatus="i">
+              		 <tr>
+              		 	<td>
+              		 		<h6>${i.count }</h6>
+                       </td>
+                    		<td class="">
+                           <h6><a href="${contextPath }/myPage/myInfo?memberId=${memberDTO.memberId}">${memberDTO.memberId} </a></h6>
+                       </td>
+                       <td>${memberDTO.memberNm }</td>
+                       <td>${memberDTO.nickname }</td>
+                       <td>${memberDTO.hp }</td>
+                       <td>${memberDTO.email }</td>
+                       <td><fmt:formatDate value="${memberDTO.joinDt }" pattern="yyyy-MM-dd"/> </td>
+                   </tr>
+              	</c:forEach>
+            		</c:otherwise>
 				</c:choose>
 			</tbody>
 			<tr>

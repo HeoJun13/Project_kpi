@@ -1,10 +1,14 @@
 package com.application.kpims.admin.member.controller;
 
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.application.kpims.admin.member.dto.AdminMemberDTO;
 import com.application.kpims.admin.member.service.AdminMemberService;
+import com.application.kpims.member.dto.MemberDTO;
 
 @Controller
 @RequestMapping("/admin/member")
@@ -54,8 +59,15 @@ public class AdminMemberController {
 		
 	}
 	
-	@GetMapping("memberList")
-	public ModelAndView memberList() {
-		return new ModelAndView("/project/memberList");
+	@GetMapping("/memberList")
+	public String memberList(ModelAndView mv  , Model model) throws Exception{
+		
+		List<MemberDTO> list = adminMemberService.getMemberList();
+		model.addAttribute("memberList", list);
+		
+		
+		return "/project/memberList" ;
+		
+		
 	}
 }
