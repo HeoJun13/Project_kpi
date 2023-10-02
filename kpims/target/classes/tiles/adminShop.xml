@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+		
+			<tiles-definitions>
+			
+				<definition name="basicLayout" 	   template="/WEB-INF/views/adminLayout/indexLayout/layout.jsp">		
+			 		<put-attribute name="nav" value="/WEB-INF/views/adminLayout/indexLayout/nav.jsp"/>	
+			 		<put-attribute name="aside" value="/WEB-INF/views/adminLayout/indexLayout/aside.jsp"/>	
+			 		<put-attribute name="footer" value="/WEB-INF/views/adminLayout/indexLayout/footer.jsp"/> 	
+			 	</definition>
+			 	
+			 	<definition name="/admin/shop"  extends="basicLayout">	
+			 		<put-attribute name="content" value="/WEB-INF/views/adminBody/shop/shopAdd.jsp"/>	
+			 	</definition>
+			
+			</tiles-definitions>
+				

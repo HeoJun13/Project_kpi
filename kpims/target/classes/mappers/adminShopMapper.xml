@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="admin.shop">
+	
+	<insert id="insert_shop" parameterType="ShopDTO">
+	 	INSERT INTO 
+		  			SHOP (
+						SHOP_NM,
+						PRICE,
+						DISCOUNT_RATE,
+						STOCK,
+						POINT,
+						DELIVERY_PRICE,
+						PART,
+						CONTENTS_ORDER,
+						INTRO,
+						PURCHASE_REVIEW,
+						ENROLL_DT				  			
+		  			)
+		    VALUES (
+			        #{shopNm},
+				    #{price},
+					#{discountRate},
+					#{stock},
+					#{point},
+					#{deliveryPrice},
+					#{part},
+					#{contentsOrder},
+					#{intro},
+					#{purchaseReview},
+					NOW()
+ 			 )
+	
+	</insert>
+	
+</mapper>

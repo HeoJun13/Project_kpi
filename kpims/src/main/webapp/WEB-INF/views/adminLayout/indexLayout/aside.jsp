@@ -98,7 +98,7 @@
 
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="${contextPath }/admin/member/memberList" class="menu-link">
+                  <a href="${contextPath}/admin/member/memberList" class="menu-link">
                     <div data-i18n="Without menu">회원리스트</div>
                   </a>
                 </li>
@@ -111,8 +111,15 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="pages-account-settings-account.html" class="menu-link">
-                    <div data-i18n="Account">Account</div>
+                  <a href="${contextPath }/admin/shop/add" class="menu-link">
+                    <div data-i18n="Account">상품등록</div>
+                  </a>
+                </li>
+              </ul>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="${contextPath }/admin/shop/list" class="menu-link">
+                    <div data-i18n="Account">상품목록</div>
                   </a>
                 </li>
               </ul>
