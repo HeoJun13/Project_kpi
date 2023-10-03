@@ -12,6 +12,7 @@ public class ShopDTO {
 	private int price;
 	private int discountRate;
 	private int stock;
+	private String salesStatus;
 	private int point;
 	private int deliveryPrice;
 	private String part;
@@ -48,6 +49,12 @@ public class ShopDTO {
 	}
 	public void setStock(int stock) {
 		this.stock = stock;
+	}
+	public String getSalesStatus() {
+		return salesStatus;
+	}
+	public void setSalesStatus(String salesStatus) {
+		this.salesStatus = salesStatus;
 	}
 	public int getPoint() {
 		return point;
@@ -93,13 +100,11 @@ public class ShopDTO {
 	}
 	@Override
 	public String toString() {
-		return "ShopDTO [shopCd=" + shopCd + ", shopNm=" + shopNm + ", price=" + price
-				+ ", discountRate=" + discountRate + ", stock=" + stock + ", point=" + point + ", deliveryPrice="
-				+ deliveryPrice + ", part=" + part + ", contentsOrder=" + contentsOrder + ", intro=" + intro
-				+ ", shopFileName=" + shopFileName + ", enrollDt=" + enrollDt + "]";
+		return "ShopDTO [shopCd=" + shopCd + ", shopNm=" + shopNm + ", price=" + price + ", discountRate="
+				+ discountRate + ", stock=" + stock + ", salesStatus=" + salesStatus + ", point=" + point
+				+ ", deliveryPrice=" + deliveryPrice + ", part=" + part + ", contentsOrder=" + contentsOrder
+				+ ", intro=" + intro + ", shopFileName=" + shopFileName + ", enrollDt=" + enrollDt + "]";
 	}
-	
-	
 	
 	
 }

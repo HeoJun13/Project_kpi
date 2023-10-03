@@ -12,6 +12,14 @@
 			 	<definition name="/admin/shop"  extends="basicLayout">	
 			 		<put-attribute name="content" value="/WEB-INF/views/adminBody/shop/shopAdd.jsp"/>	
 			 	</definition>
+			 	
+			 	<definition name="/admin/shopList"  extends="basicLayout">	
+			 		<put-attribute name="content" value="/WEB-INF/views/adminBody/shop/shopList.jsp"/>	
+			 	</definition>
+			 	
+			 	<definition name="/admin/shopModify"  extends="basicLayout">	
+			 		<put-attribute name="content" value="/WEB-INF/views/adminBody/shop/shopModify.jsp"/>	
+			 	</definition>
 			
 			</tiles-definitions>
 				

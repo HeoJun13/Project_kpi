@@ -119,7 +119,7 @@
               <ul class="menu-sub">
                 <li class="menu-item">
                   <a href="${contextPath }/admin/shop/list" class="menu-link">
-                    <div data-i18n="Account">상품목록</div>
+                    <div data-i18n="Account">상품리스트</div>
                   </a>
                 </li>
               </ul>

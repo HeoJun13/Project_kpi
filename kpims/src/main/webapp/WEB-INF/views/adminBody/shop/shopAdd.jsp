@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -22,58 +22,67 @@
               <!-- Basic Layout -->
               <div class="row">
                 <div class="col-xl">
+                     <form action="${contextPath }/admin/shop/add" method="post" enctype="multipart/form-data">
                   <div class="card mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
                       <h5 class="mb-0">상품등록</h5>
                     </div>
                     <div class="card-body">
-                     <form name="shopAdd" action="${contextPath }/admin/shop/add" method="post" enctype="multipart/form-data" class="form-label">
                       <div class="mb-3">
                                 <div class="form-label">
                                     <p>상품이미지<span>*</span> <span class="icon_upload"></span> </p>
-                                    <input type="file" name="goodsFileName">
+                                    <input type="file" id="goodsFileName" name="goodsFileName">
                                 </div>
                            </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-fullname">상품명</label>
-                          <input type="text" class="form-control" name="shopNm" placeholder="상품명을 입력하세요." />
+                          <input type="text" class="form-control" id="shopNm" name="shopNm" placeholder="상품명을 입력하세요." />
                         </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-company">가격</label>
-                          <input type="text" class="form-control" name="price" placeholder="가격을 입력하세요." />
+                          <input type="text" class="form-control" id="price" name="price" placeholder="가격을 입력하세요." />
                         </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-company">할인률</label>
-                          <input type="text" class="form-control" name="discountRate" placeholder="할인률을 입력하세요." />
+                          <input type="text" class="form-control" id="discountRate" name="discountRate" placeholder="할인률을 입력하세요." />
                         </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-company">재고</label>
-                          <input type="text" class="form-control" name="stock" placeholder="재고를 입력하세요." />
+                          <input type="text" class="form-control" id="stock" name="stock" placeholder="재고를 입력하세요." />
                         </div>
                         <div class="mb-3">
                                 <div class="form-label">
+                                    <p>판매상태 <span>*</span></p>
+                                    <select id="salesStatus" name="salesStatus">
+                                    	<option value="sale">판매중</option>
+                                    	<option value="stopSelling">판매중지</option>
+                                    </select>
+                                </div>
+                            </div>
+                        <div class="mb-3">
+                                <div class="form-label">
                                     <p>분류 <span>*</span></p>
-                                    <select name="part">
+                                    <select id="part" name="part">
                                     	<option value="general">일반</option>
-                                    	<option value="new">사무용의자</option>
-                                    	<option value="best">학생/유아용의자</option>
-                                    	<option value="steady">식당용의자</option>
+                                    	<option value="officeChair">사무용의자</option>
+                                    	<option value="studentChair">학생/유아용의자</option>
+                                    	<option value="diningChair">식당용의자</option>
                                     </select>
                                 </div>
                             </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-company">적립포인트(P)</label>
-                          <input type="text" class="form-control" name="point" placeholder="적립 포인트(P)를 입력하세요." />
+                          <input type="text" class="form-control" id="point" name="point" placeholder="적립 포인트(P)를 입력하세요." />
                         </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-company">배송비</label>
-                          <input type="text" class="form-control" name="deliveryPrice" placeholder="배송비를 입력하세요." />
+                          <input type="text" class="form-control" id="deliveryPrice" name="deliveryPrice" placeholder="배송비를 입력하세요." />
                         </div>
                         <div class="col-sm-12">
                                 <div class="form-label">
                                    <div class="checkout__form__input">
                                     <p>상품소개<span>*</span></p>
-                                    <textarea rows="5" cols="100" name="intro" placeholder="상품소개를 입력하세요."></textarea> 
+                                    <textarea rows="5" cols="100" id="intro" name="intro" placeholder="상품소개를 입력하세요."></textarea> 
                                 	<script>CKEDITOR.replace("intro");</script>
                                 </div>
                             </div>
@@ -81,9 +90,9 @@
                         <div align="right">
                         <button type="submit" class="btn btn-primary">Send</button>
                       	</div>
-                      </form>
                     </div>
                   </div>
+                      </form>
                 </div>
               </div>
             </div>

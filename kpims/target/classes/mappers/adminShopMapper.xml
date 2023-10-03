@@ -2,6 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="admin.shop">
+
+	<select id="select_shop" resultType="ShopDTO">
+		SELECT
+				*
+		FROM
+				SHOP
+	</select>
 	
 	<insert id="insert_shop" parameterType="ShopDTO">
 	 	INSERT INTO 
@@ -10,12 +17,13 @@
 						PRICE,
 						DISCOUNT_RATE,
 						STOCK,
+						SALES_STATUS,
 						POINT,
 						DELIVERY_PRICE,
 						PART,
 						CONTENTS_ORDER,
 						INTRO,
-						PURCHASE_REVIEW,
+						SHOP_FILE_NAME,
 						ENROLL_DT				  			
 		  			)
 		    VALUES (
@@ -23,15 +31,62 @@
 				    #{price},
 					#{discountRate},
 					#{stock},
+					#{salesStatus},
 					#{point},
 					#{deliveryPrice},
 					#{part},
 					#{contentsOrder},
 					#{intro},
-					#{purchaseReview},
+					#{shopFileName},
 					NOW()
  			 )
 	
 	</insert>
+	
+	<update id="update_shop" parameterType="ShopDTO">
+	UPDATE
+			SHOP
+	<set>
+		<if test='shopNm != null and shopNm !=""'>
+			SHOP_NM = #{shopNm},
+		</if>
+		<if test='price != null and price !=""'>
+			PRICE = #{price},
+		</if>
+		<if test='discountRate != null and discountRate !=""'>
+			DISCOUNT_RATE = #{discountRate},
+		</if>
+		<if test='stock != null and stock !=""'>
+			STOCK = #{stock},
+		</if>
+		<if test='salesStatus != null and salesStatus !=""'>
+			SALES_STATUS = #{salesStatus},
+		</if>
+		<if test='point != null and point !=""'>
+			POINT = #{point},
+		</if>
+		<if test='deliveryPrice != null and deliveryPrice !=""'>
+			DELIVERY_PRICE = #{deliveryPrice},
+		</if>
+		<if test='part != null and part !=""'>
+			PART = #{part},
+		</if>
+		<if test='contentsOrder != null and contentsOrder !=""'>
+			CONTENTS_ORDER = #{contentsOrder},
+		</if>
+		<if test='intro != null and intro !=""'>
+			INTRO = #{intro},
+		</if>
+		<if test='shopFileName != null and shopFileName !=""'>
+			SHOP_FILE_NAME = #{shopFileName},
+		</if>
+	</set>
+		WHERE 
+				SHOP_CD = #{shopCd}
+ </update>
+ 
+ <delete id="delect_shop" parameterType="int">
+		DELETE FROM SHOP WHERE SHOP_CD = #{shopCd}
+	</delete>	
 	
 </mapper>
