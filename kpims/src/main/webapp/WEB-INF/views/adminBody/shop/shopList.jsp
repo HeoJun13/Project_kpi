@@ -49,7 +49,7 @@
 					<c:choose>
 						<c:when test="${empty shopList}">
 							<tr>
-            				<td colspan="4" align="center"><h3>등록된 상품이 없습니다</h3></td>
+            				<td colspan="7" align="center"><h3>등록된 상품이 없습니다</h3></td>
             			</tr>
             		</c:when>
             		<c:otherwise>

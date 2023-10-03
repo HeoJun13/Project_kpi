@@ -101,11 +101,11 @@ public class AdminShopController {
 	}
 	
 	@GetMapping("/Modify")
-	public ModelAndView Modify() {
+	public ModelAndView Modify(@RequestParam("shopCd") int shopCd) {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/admin/shopModify");
-		//mv.addObject("shopModify", adminShopService.getshopModify());
+		//mv.addObject("shopDTO", adminShopService.shopModify(shopCd));
 		return mv;
 	}
 	

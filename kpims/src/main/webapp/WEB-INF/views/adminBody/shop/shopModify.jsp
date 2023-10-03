@@ -9,7 +9,8 @@
 <script>
 	$().ready(function(){
 		
-		$("[name='part']").val("${goodsDTO.part}");
+		$("[name='part']").val("${shopDTO.part}");
+		$("[name='salesStatus']").val("${shopDTO.salesStatus}");
 		
 	});
 
@@ -18,16 +19,14 @@
 </head>
 <body>
 
-  <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">상품관리/</span>상품수정</h4>
 
-              <!-- Basic Layout -->
               <section class="row">
                 <div class="col-xl">
                    <form action="${contextPath }/admin/shop/Modify" method="post" enctype="multipart/form-data">
-                  	 <input type="hidden" name="shopCd" value="${shopDTO.shopCd }">
+                  	 <input type="hidden" id="shopCd" name="shopCd" value="${shopDTO.shopCd }">
                   <div class="card mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
                       <h5 class="mb-0">상품수정</h5>
@@ -40,20 +39,20 @@
                                 </div>
                            </div>
                         <div class="mb-3">
-                          <label class="form-label" for="basic-default-fullname">상품명</label>
-                          <input type="text" class="form-control" id="shopNm" name="shopNm" value="${shopDTO.shopNm }" />
+                         <label class="form-label" for="basic-default-company">상품명<span>*</span></label>
+                          <input type="text" class="form-control" id="shopNm" name="shopNm" value="${shopDTO.shopNm }">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label" for="basic-default-company">가격</label>
-                          <input type="text" class="form-control" id="price" name="price" value="${shopDTO.price }" />
+                          <label class="form-label" for="basic-default-company">가격<span>*</span></label>
+                          <input type="text" class="form-control" id="price" name="price" value="${shopDTO.price }">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label" for="basic-default-company">할인률</label>
-                          <input type="text" class="form-control" id="discountRate" name="discountRate" value="${shopDTO.discountRate }" />
+                          <label class="form-label" for="basic-default-company">할인률<span>*</span></label>
+                          <input type="text" class="form-control" id="discountRate" name="discountRate" value="${shopDTO.discountRate }">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label" for="basic-default-company">재고</label>
-                          <input type="text" class="form-control" id="stock" name="stock" value="${shopDTO.stock }" />
+                          <label class="form-label" for="basic-default-company">재고<span>*</span></label>
+                          <input type="text" class="form-control" id="stock" name="stock" value="${shopDTO.stock }">
                         </div>
                         <div class="mb-3">
                                 <div class="form-label">
@@ -76,12 +75,12 @@
                                 </div>
                             </div>
                         <div class="mb-3">
-                          <label class="form-label" for="basic-default-company">적립포인트(P)</label>
-                          <input type="text" class="form-control" id="point" name="point" value="${shopDTO.point }" />
+                          <label class="form-label" for="basic-default-company">적립포인트(P)<span>*</span></label>
+                          <input type="text" class="form-control" id="point" name="point" value="${shopDTO.point }">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label" for="basic-default-company">배송비</label>
-                          <input type="text" class="form-control" id="deliveryPrice" name="deliveryPrice" value="${shopDTO.deliveryPrice }" />
+                          <label class="form-label" for="basic-default-company">배송비<span>*</span></label>
+                          <input type="text" class="form-control" id="deliveryPrice" name="deliveryPrice" value="${shopDTO.deliveryPrice }">
                         </div>
                         <div class="col-sm-12">
                                 <div class="form-label">
@@ -102,6 +101,5 @@
              </section>
               </div>
            
-            <!-- / Content -->
 
 </body>
