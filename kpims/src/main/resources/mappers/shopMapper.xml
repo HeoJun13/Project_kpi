@@ -8,4 +8,13 @@
 	    FROM 
 				SHOP
 	</select>
+	
+	<select id="selectOneShop" parameterType="ShopDTO" resultType="ShopDTO" >
+	 SELECT 
+	    		*
+	    FROM 
+	    		SHOP  
+        WHERE 
+        		SHOP_CD = #{shopCd}
+	</select>
 </mapper>

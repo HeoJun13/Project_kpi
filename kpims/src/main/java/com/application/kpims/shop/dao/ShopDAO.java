@@ -8,4 +8,6 @@ public interface ShopDAO {
 
 	public List<ShopDTO> selectShopList(ShopDTO shopDTO);
 
+	public ShopDTO selectOneShop(int shopCd);
+
 }

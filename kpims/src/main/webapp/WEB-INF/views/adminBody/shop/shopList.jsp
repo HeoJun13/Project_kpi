@@ -68,11 +68,7 @@
                        <h6><i class="fab fa-angular fa-lg text-danger me-3"></i>${memberDTO.memberId}</h6>
                        </td>
                        <td>
-                       <select>
-                        	<option value="">선택</option>
-                        	<option value="">판매중</option>
-                        	<option value="">판매중지</option>
-                        </select>
+                        	<p value="">${shopDTO.salesStatus }</p>
                        </td>
                        <td class="fab fa-angular fa-lg text-danger me-3" align="center">
                        	<div class="cart__product__item__title">

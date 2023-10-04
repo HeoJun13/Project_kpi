@@ -11,7 +11,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,15 +21,17 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.application.kpims.admin.shop.dto.ShopDTO;
 import com.application.kpims.admin.shop.service.AdminShopService;
+import com.application.kpims.shop.service.ShopService;
 
 
-@Repository
 @Controller
 @RequestMapping("/admin/shop")
 public class AdminShopController {
 	
 	@Autowired
 	private AdminShopService adminShopService;
+	@Autowired
+	private ShopService shopService;
 	
 	private final String SHOP_IMAGE_REPO_PATH = "C:\\Project_Files\\";	
 	
@@ -79,7 +80,7 @@ public class AdminShopController {
 		
 		String jsScript= "<script>";
 		   jsScript += " alert('상품을 등록하였습니다.');";
-		   jsScript += "location.href='shopList';";
+		   jsScript += "location.href='list';";
 		   jsScript +="</script>";
 	
 	HttpHeaders responseHeaders = new HttpHeaders();
@@ -101,11 +102,12 @@ public class AdminShopController {
 	}
 	
 	@GetMapping("/Modify")
-	public ModelAndView Modify(@RequestParam("shopCd") int shopCd) {
+	public ModelAndView Modify(@RequestParam("shopCd") int shopCd) throws Exception{
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/admin/shopModify");
-		//mv.addObject("shopDTO", adminShopService.shopModify(shopCd));
+		mv.addObject("shopDTO", shopService.getShopDetail(shopCd));
+		
 		return mv;
 	}
 	
@@ -117,6 +119,7 @@ public class AdminShopController {
 		SimpleDateFormat fm = new SimpleDateFormat("yyyy-MM-dd");
 		
 		ShopDTO shopDTO = new ShopDTO();
+		shopDTO.setShopCd(Integer.parseInt(multipartRequest.getParameter("shopCd")));
 		shopDTO.setShopNm(multipartRequest.getParameter("shopNm"));
 		shopDTO.setPrice(Integer.parseInt(multipartRequest.getParameter("price")));
 		shopDTO.setDiscountRate(Integer.parseInt(multipartRequest.getParameter("discountRate")));
@@ -143,11 +146,13 @@ public class AdminShopController {
 			}
 		}	
 		
+		System.out.println("+==========");
+		System.out.println(shopDTO);
 		adminShopService.shopModify(shopDTO);
 		
 		String jsScript= "<script>";
 		   jsScript += " alert('상품정보를 수정하였습니다.');";
-		   jsScript += "location.href='shopList';";
+		   jsScript += "location.href='list';";
 		   jsScript +="</script>";
 	
 	HttpHeaders responseHeaders = new HttpHeaders();
@@ -165,7 +170,7 @@ public class AdminShopController {
 		
 		String jsScript= "<script>";
 			   jsScript += " alert('등록된 상품을 삭제하였습니다.');";
-			   jsScript += "location.href='shopList';";
+			   jsScript += "location.href='list';";
 			   jsScript +="</script>";
 
 		HttpHeaders responseHeaders = new HttpHeaders();

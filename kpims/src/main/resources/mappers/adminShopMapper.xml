@@ -81,8 +81,9 @@
 			SHOP_FILE_NAME = #{shopFileName},
 		</if>
 	</set>
-		WHERE 
-				SHOP_CD = #{shopCd}
+		WHERE
+			
+			SHOP_CD = #{shopCd}
  </update>
  
  <delete id="delect_shop" parameterType="int">

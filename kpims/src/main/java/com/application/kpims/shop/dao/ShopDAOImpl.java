@@ -19,4 +19,9 @@ public class ShopDAOImpl implements ShopDAO {
 		return sqlSession.selectList("shop.selectListShop" , shopDTO);	
 	}
 
+	@Override
+	public ShopDTO selectOneShop(int shopCd) {
+		return sqlSession.selectOne("shop.selectOneShop", shopCd);
+	}
+
 }

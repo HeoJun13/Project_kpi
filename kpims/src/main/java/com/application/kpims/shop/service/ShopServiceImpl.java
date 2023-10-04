@@ -20,4 +20,10 @@ public class ShopServiceImpl implements ShopService {
 		return shopDAO.selectShopList(shopDTO);
 	}
 
+
+	@Override
+	public ShopDTO getShopDetail(int shopCd) throws Exception {
+		return shopDAO.selectOneShop(shopCd);
+	}
+
 }
