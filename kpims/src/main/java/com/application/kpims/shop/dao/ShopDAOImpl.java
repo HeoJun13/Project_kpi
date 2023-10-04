@@ -20,8 +20,13 @@ public class ShopDAOImpl implements ShopDAO {
 	}
 
 	@Override
-	public ShopDTO selectOneShop(int shopCd) {
+	public ShopDTO selectOneShop(int shopCd) throws Exception{
 		return sqlSession.selectOne("shop.selectOneShop", shopCd);
+	}
+
+	@Override
+	public List<ShopDTO> selectelatedShopList(ShopDTO shopDTO) throws Exception{
+		return sqlSession.selectList("shop.selectlatedShop" , shopDTO);
 	}
 
 }

@@ -17,4 +17,14 @@
         WHERE 
         		SHOP_CD = #{shopCd}
 	</select>
+	
+	<select id="selectlatedShop"  parameterType="ShopDTO" resultType="ShopDTO">
+		SELECT 
+	   			*
+	    FROM 
+				SHOP
+		WHERE
+				PART = #{part} AND SHOP_CD != #{shopCd}
+		
+	</select>
 </mapper>

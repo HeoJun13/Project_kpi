@@ -10,6 +10,10 @@
 			 	<definition name="/shop/list"  extends="CsbasicLayout">	
 			 		<put-attribute name="contact" value="/WEB-INF/views/CsBody/shop/shopList.jsp"/>	
 			 	</definition>
+			 	
+			 	<definition name="/shop/detail"  extends="CsbasicLayout">	
+			 		<put-attribute name="contact" value="/WEB-INF/views/CsBody/shop/shopDetail.jsp"/>	
+			 	</definition>
 			
 			</tiles-definitions>
 			

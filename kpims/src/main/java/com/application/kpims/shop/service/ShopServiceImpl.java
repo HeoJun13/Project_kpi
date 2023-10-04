@@ -19,11 +19,13 @@ public class ShopServiceImpl implements ShopService {
 	public List<ShopDTO> getshopList(ShopDTO shopDTO) {
 		return shopDAO.selectShopList(shopDTO);
 	}
-
-
 	@Override
 	public ShopDTO getShopDetail(int shopCd) throws Exception {
 		return shopDAO.selectOneShop(shopCd);
+	}
+	@Override
+	public List<ShopDTO> getRelatedShopList(ShopDTO shopDTO) throws Exception{
+		return shopDAO.selectelatedShopList(shopDTO);
 	}
 
 }

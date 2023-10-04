@@ -8,5 +8,6 @@ public interface ShopService {
 
 	public List<ShopDTO> getshopList(ShopDTO shopDTO);
 	public ShopDTO getShopDetail(int shopCd) throws Exception;
+	public List<ShopDTO> getRelatedShopList(ShopDTO shopDTO)throws Exception;
 
 }
