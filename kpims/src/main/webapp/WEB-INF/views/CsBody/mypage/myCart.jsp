@@ -58,7 +58,7 @@
                             <img src="${contextPath }/admin/project/thumbnails?shopFileName=${shopDTO.shopFileName }" width="100" height="100" alt="Image" class="img-fluid">
                           </td>
                           <td class="product-name">
-                            <h2 class="h5 text-black">${ }</h2>
+                            <h2 class="h5 text-black">"${shopDTO.shopNm }"</h2>
                           </td>
                           <td>$49.00</td>
                           <td>
