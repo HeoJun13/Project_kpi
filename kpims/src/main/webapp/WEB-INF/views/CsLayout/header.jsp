@@ -21,21 +21,37 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<div class="collapse navbar-collapse" id="navbarsFurni">
+				<div class="collapse navbar-collapse" id="navbarsFurni" >
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 						<li class="nav-item active">
 							<a class="nav-link" href="${contextPath }/customer/project/main">Home</a>
 						</li>
-						<li><a class="nav-link" href="${contextPath }/shop/list">Shop</a></li>
+						<li><a class="nav-link" href="${contextPath }/shop/list">사무용의자</a></li>
 						<li><a class="nav-link" href="about.html">About us</a></li>
 						<li><a class="nav-link" href="services.html">Services</a></li>
 						<li><a class="nav-link" href="blog.html">Blog</a></li>
-						<li><a class="nav-link" href="contact.html">Contact us</a></li>
+						<li><a class="nav-link" href="contact.html">Contact</a></li>
 					</ul>
+					<c:choose>
+                    		<c:when test="${sessionScope.memberId eq null }">
+		                        <div class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-3">
+		                            <a class="nav-link" href="${contextPath }/member/login">로그인</a>
+		                            <a class="nav-link" href="${contextPath }/member/register">회원가입</a>
+		                        </div>
+                    		</c:when>
+                    		<c:otherwise>
+		                        <div class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-3">
+		                            <a class="nav-link" href="${contextPath }/member/logout">로그아웃</a>
+		                        </div>
+                    		</c:otherwise>
+                    	</c:choose>
+					
+					
 
-					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-3">
 						<li><a class="nav-link" href="${contextPath }/member/login"><img src="${contextPath }/resources/CsBoostrap/images/user.svg"></a></li>
-						<li><a class="nav-link" href="cart.html"><img src="${contextPath }/resources/CsBoostrap/images/cart.svg"></a></li>
+						<li><a class="nav-link" href="${contextPath }/mypage/cartlist"><img src="${contextPath }/resources/CsBoostrap/images/cart.svg"></a></li>
+						<li><a class="nav-link" href="contact.html">커뮤니티</a></li>
 					</ul>
 				</div>
 			</div>

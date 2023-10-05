@@ -40,10 +40,11 @@
 		      			 <c:forEach var="shopDTO" items="${shopList }">
 		      		 		<div class="col-12 col-md-4 col-lg-3 mb-5">
 		      		 			<div class="product-item" href="">
-		      		 				<div class="img-fluid product-thumbnail" data-setbg="${contextPath }/list?shopFileName=${shopDTO.shopFileName}">
+		      		 			<img src="${contextPath }/admin/project/thumbnails?shopFileName=${shopDTO.shopFileName }" width="100" height="100"/>
+		      		 				
 		      		 				<div class="product-title">
 		      		 					<h3>
-		      		 						<a href="${contextPath }/shop/shopDetail?goodsCd=${shopDTO.shopCd}">${shopDTO.shopNm }<br></a>
+		      		 						<a href="${contextPath }/shop/detail?shopCd=${shopDTO.shopCd}">${shopDTO.shopNm }<br></a>
 		      		 					</h3>
 		      		 				<div class="product__price" style="text-decoration: line-through; color: gray"><fmt:formatNumber value="${shopDTO.price }"/>원 (${shopDTO.discountRate}%)</div>
 		      		 				<div class="product-price"><fmt:formatNumber value="${shopDTO.price - shopDTO.price * shopDTO.discountRate / 100 }"/>원</div>
@@ -52,7 +53,6 @@
 		      		 				<span class="icon-cross">
 										<img src="images/cross.svg" class="img-fluid">
 									</span>
-		      		 			</div>
 		      		 		</div>
 		      		 	</div>
 		      		 </c:forEach>	

@@ -81,7 +81,7 @@
                   		<a href="${contextPath }/member/login"><i class="col-md-12"></i></a>
 						<button class="nav-link" type="submit">로그인</button>
 						<section>
-						<a class="">로그인</a>
+						<a class="nav-link">비밀번호 찾기</a>
 						<a class="" href="${contextPath }/member/register">회원가입</a>
 						</section>
 		                </div>

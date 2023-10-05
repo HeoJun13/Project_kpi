@@ -35,7 +35,7 @@
                       <div class="mb-3">
                                 <div class="form-label">
                                     <p>상품이미지<span>*</span> <span class="icon_upload"></span> </p>
-                                    <input type="file" id="goodsFileName" name="goodsFileName" value="${shopDTO.shopFileName }">
+                                    <input type="file" id="shopFileName" name="shopFileName" value="${shopDTO.shopFileName }">
                                 </div>
                            </div>
                         <div class="mb-3">

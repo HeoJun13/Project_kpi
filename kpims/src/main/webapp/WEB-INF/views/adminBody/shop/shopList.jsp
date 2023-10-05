@@ -59,7 +59,7 @@
               		 		<h6>${shopDTO.shopCd }</h6>
                        </td>
                     		<td class="fab fa-angular fa-lg text-danger me-3">
-                          	<img src="${contextPath }/thumbnails?shopFileName=${goodsDTO.shopFileName }" width="100" height="100">
+                          	<img src="${contextPath }/admin/project/thumbnails?shopFileName=${shopDTO.shopFileName }" width="100" height="100">
                              <td>
                               <div class="cart__product__item__title">
                                   <h6><a href="${contextPath }/goods/goodsDetail?shopCd=${shopDTO.shopCd}">${shopDTO.shopNm }</a></h6>

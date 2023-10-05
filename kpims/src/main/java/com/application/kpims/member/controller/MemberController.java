@@ -62,6 +62,21 @@ public class MemberController {
 		}
 		return mv;
 	}
+	
+	@GetMapping("/logout")
+	public ResponseEntity<Object> logout(HttpServletRequest request) throws Exception {
+		
+		HttpSession session = request.getSession();
+		session.invalidate(); 
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		String jsScript = "<script>";
+			   jsScript += "location.href='" + request.getContextPath() + "/customer/project/main';";
+			   jsScript += " </script>";
+		
+		return new ResponseEntity<Object>(jsScript, responseHeaders, HttpStatus.OK);
 
-
+	}
 }
