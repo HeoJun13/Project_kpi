@@ -40,14 +40,15 @@
 		                        </div>
                     		</c:when>
                     		<c:otherwise>
+                    		<div>
+                    			<a class="nav-link">${memberDTO.nickname } 님.</a>
+                    		</div>
 		                        <div class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-3">
 		                            <a class="nav-link" href="${contextPath }/member/logout">로그아웃</a>
 		                        </div>
                     		</c:otherwise>
                     	</c:choose>
 					
-					
-
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-3">
 						<li><a class="nav-link" href="${contextPath }/member/login"><img src="${contextPath }/resources/CsBoostrap/images/user.svg"></a></li>
 						<li><a class="nav-link" href="${contextPath }/mypage/cartlist"><img src="${contextPath }/resources/CsBoostrap/images/cart.svg"></a></li>

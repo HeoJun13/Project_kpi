@@ -3,11 +3,38 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<c:set var="sessionId" value="${sessionScope.memberId }"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script type="text/javascript">
+
+	function processToCart(shopDTO) {
+		swal({
+	        title: "장바구니에 담았습니다.", 
+	        text: "You will be redirected to https://utopian.io", 
+	        type: "warning",
+	        confirmButtonText: "Yes, visit link!",
+	        showCancelButton: true
+	        })
+	          .then((result) => {
+	          if (result.value) {
+	              window.location = 'https://utopian.io';
+	          } else if (result.dismiss === 'cancel') {
+	              swal(
+	                'Cancelled',
+	                'Your stay here :)',
+	                'error'
+	              )
+	          }
+	       }
+	     }
+</script>
 </head>
 <body>
 

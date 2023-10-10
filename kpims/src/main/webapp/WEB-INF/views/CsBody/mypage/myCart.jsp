@@ -55,12 +55,24 @@
                     		 <c:forEach var="myCart" items="${CartList }">
                     		<tr>
                           <td class="product-thumbnail">
-                            <img src="${contextPath }/admin/project/thumbnails?shopFileName=${shopDTO.shopFileName }" width="100" height="100" alt="Image" class="img-fluid">
+                          <div class="checkbox checkbox-styled no-margin"></div>
+                            <div>
+                            	<img src="${contextPath }/admin/project/thumbnails?shopFileName=${myCart.shopFileName }" width="100" height="100" alt="Image" class="img-fluid">
+                            </div>
                           </td>
                           <td class="product-name">
-                            <h2 class="h5 text-black">"${shopDTO.shopNm }"</h2>
+                            <h2 class="h5 text-black">"${myCart.shopNm }"</h2>
                           </td>
-                          <td>$49.00</td>
+                          <td class="product-stoke">
+                          	<input type="text" id="cartGoodsQty${myCart.cartCd }" value="${myCart.cartShopQty }" />
+                          </td>
+                          <td class="product-price">
+                          	<h2 class="h5 text-black">
+                          	<span style="text-decoration: line-through; color: gray" ><fmt:formatNumber value="${myCart.price }"/></span><br>
+                           	<fmt:formatNumber value="${myCart.price -  myCart.price * (myCart.discountRate / 100)}"/>
+							<input type="hidden" id="price${myCart.cartCd }" value="${myCart.price -  myCart.price * (myCart.discountRate / 100)}">	
+                          	</h2>
+                          </td>
                           <td>
                             <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
                               <div class="input-group-prepend">

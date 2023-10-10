@@ -33,7 +33,8 @@ public class AdminShopController {
 	@Autowired
 	private ShopService shopService;
 	
-	private final String SHOP_IMAGE_REPO_PATH = "C:\\Project_Files\\";	
+	//private final String SHOP_IMAGE_REPO_PATH = "C:\\Project_Files\\";	
+	private final String SHOP_IMAGE_REPO_PATH = "/Users/junhoheo/upload/";	
 	
 	@GetMapping("/add")
 	public ModelAndView add() {
@@ -146,8 +147,8 @@ public class AdminShopController {
 			}
 		}	
 		
-		System.out.println("+==========");
-		System.out.println(shopDTO);
+		//System.out.println("+==========");
+		//System.out.println(shopDTO);
 		adminShopService.shopModify(shopDTO);
 		
 		String jsScript= "<script>";
