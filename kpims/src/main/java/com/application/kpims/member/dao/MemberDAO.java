@@ -8,6 +8,8 @@ public interface MemberDAO {
 
 	public String selectLogin(MemberDTO memberDTO) throws Exception;
 
+	public int selectMyCartCnt(String memberId);
+
 	//public String MemberIdCheck(String memberId);
 
 

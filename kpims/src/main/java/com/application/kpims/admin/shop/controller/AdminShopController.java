@@ -33,8 +33,8 @@ public class AdminShopController {
 	@Autowired
 	private ShopService shopService;
 	
-	//private final String SHOP_IMAGE_REPO_PATH = "C:\\Project_Files\\";	
-	private final String SHOP_IMAGE_REPO_PATH = "/Users/junhoheo/upload/";	
+	private final String SHOP_IMAGE_REPO_PATH = "C:\\Project_Files\\";	
+	//private final String SHOP_IMAGE_REPO_PATH = "/Users/junhoheo/upload/";	
 	
 	@GetMapping("/add")
 	public ModelAndView add() {
@@ -166,7 +166,7 @@ public class AdminShopController {
 	@GetMapping("/adminShopRemove")
 	public ResponseEntity<Object> adminGoodsRemove(@RequestParam("shopCd") int shopCd) throws Exception {
 		
-		//new File(SHOP_IMAGE_REPO_PATH + adminShopService.getshopDetail(shopCd).getGoodsFileName()).delete();
+		//new File(SHOP_IMAGE_REPO_PATH + ShopService.getshopDetail(shopCd).getGoodsFileName()).delete();
 		adminShopService.shopRemove(shopCd);
 		
 		String jsScript= "<script>";

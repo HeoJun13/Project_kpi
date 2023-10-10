@@ -9,10 +9,11 @@ public class MypageDTO {
 	
 	private long cartCd;
 	private int shopCd;		  // 번호
-	private int cartshopQty;	  // 장바구니 개수
+	private int cartshopQty;	  // 장바구니 갯수
 	private String memberId;  // 회원아이디
 	private String shippingInfo; // 배송정보
 	private Date enrollDt;
+	
 	public long getCartCd() {
 		return cartCd;
 	}

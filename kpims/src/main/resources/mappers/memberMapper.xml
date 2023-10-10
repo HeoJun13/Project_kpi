@@ -21,7 +21,7 @@
 			)		
 		</insert>
 		
-		<select id="select_Login" resultType="String">
+		<select id="selectLogin" resultType="String">
 			SELECT
 					*
 			FROM
@@ -30,6 +30,15 @@
 					MEMBER_ID = #{memberId} AND PASSWD = #{passwd}		
 			
 		</select>
+		
+		<select id="selectMyCartCnt" resultType="int" parameterType="String">
+	  		SELECT
+	  				COUNT(*)
+	  		FROM
+	  				CART
+	  		WHERE
+	  				MEMBER_ID = #{memberId}
+  	</select>
 	
 
 </mapper>

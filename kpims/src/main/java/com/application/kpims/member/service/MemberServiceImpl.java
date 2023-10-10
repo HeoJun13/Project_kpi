@@ -35,6 +35,13 @@ public class MemberServiceImpl implements MemberService {
 		return name;
 	}
 
+	@Override
+	public int getMyCartCnt(String memberId) {
+		return memberDAO.selectMyCartCnt(memberId);
+	}
+
+	
+
 
 	
 

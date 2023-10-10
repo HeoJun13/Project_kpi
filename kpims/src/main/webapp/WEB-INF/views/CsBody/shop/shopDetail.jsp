@@ -9,31 +9,54 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-<script type="text/javascript">
+<script>
 
-	function processToCart(shopDTO) {
-		swal({
-	        title: "장바구니에 담았습니다.", 
-	        text: "You will be redirected to https://utopian.io", 
-	        type: "warning",
-	        confirmButtonText: "Yes, visit link!",
-	        showCancelButton: true
-	        })
-	          .then((result) => {
-	          if (result.value) {
-	              window.location = 'https://utopian.io';
-	          } else if (result.dismiss === 'cancel') {
-	              swal(
-	                'Cancelled',
-	                'Your stay here :)',
-	                'error'
-	              )
-	          }
-	       }
-	     }
+  function processToCart(shopCd) {
+	  
+	if ("${sessionId == null}" == "true") {
+		alert("로그인을 진행해주세요.");
+		location.href = "${contextPath }/member/login";
+	}
+	else {
+		$.ajax({
+			url : "${contextPath }/mypage/addCart",
+			method : "get",
+			data : {"shopCd" : shopCd , "cartshopQty" : $("#cartshopQty").val()},
+			success : function(result) {
+				
+				if (result == "duple") {
+					alert("이미 추가된 품목입니다.");
+				}
+				else {
+					alert("장바구니에 추가되었습니다.");
+				}
+				
+			}
+		})
+		
+	}
+	
+}
+  
+  function processToOrder(shopCd) {
+	  
+		if ("${sessionId == null}" == "true") {
+			alert("로그인을 진행해주세요.");
+			location.href = "${contextPath }/member/login";
+		}
+  }
+ 
+	let quantity = $(".quantity_input").val();
+	$(".plus_btn").on("click", function(){
+		$(".quantity_input").val(++quantity);
+	});
+	$(".minus_btn").on("click", function(){
+		if(quantity > 1){
+			$(".quantity_input").val(--quantity);	
+		}
+	});
+	
+	
 </script>
 </head>
 <body>
@@ -101,11 +124,17 @@
                             <div class="quantity">
                                 <span>수량 : </span>
                                 <div class="pro-qty">
-                                    <input type="text" id="orderShopQty" name="orderShopQty" value="1"> &emsp;&emsp;
+	                                <span>
+                                		<button class="minus_btn">-</button>
+	                                </span>
+                                    <input type="text" id="orderShopQty" name="orderShopQty" class="quantity_input" value="1">
+                                	<span>
+	                               	 	<button class="plus_btn">+</button>
+                                	</span>
                                 </div>
                             </div>
-                            <a href="javascript:processToCart(${shopDTO.shopCd });" class="cart-btn"><span class="icon_cart_alt"></span> 장바구니</a>
-                            <a href="javascript:processToOrder(${shopDTO.shopCd });" class="cart-btn"><span class="icon_bag_alt"></span> 주문하기</a>
+                            <a href="javascript:processToCart(${shopDTO.shopCd });" class="cart-btn"><span></span> 장바구니</a>
+                            <a href="javascript:processToOrder(${shopDTO.shopCd });" class="cart-btn"><span></span> 주문하기</a>
                         </div>
                         </div>
                     </div>

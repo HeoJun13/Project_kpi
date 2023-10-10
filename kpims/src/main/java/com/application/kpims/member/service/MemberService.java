@@ -13,8 +13,8 @@ import com.application.kpims.member.dto.MemberDTO;
 public interface MemberService {
 	
 	public void registerMember(MemberDTO memberDTO) throws Exception;
-
 	public String login(MemberDTO memberDTO, HttpSession session) throws Exception;
+	public int getMyCartCnt(String memberId);
 
 	
 }

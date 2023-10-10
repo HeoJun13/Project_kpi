@@ -40,7 +40,7 @@
 		                        </div>
                     		</c:when>
                     		<c:otherwise>
-                    		<div>
+                    		<div class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-3">
                     			<a class="nav-link">${memberDTO.nickname } 님.</a>
                     		</div>
 		                        <div class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-3">

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.application.kpims.member.service.MemberService;
 import com.application.kpims.mypage.dto.MypageDTO;
 import com.application.kpims.mypage.service.MypageService;
 
@@ -20,6 +21,7 @@ public class MypageController {
 	
 	@Autowired
 	private MypageService mypageService;
+	private MemberService memberService;
 	
 	
 	@GetMapping("/addCart")
@@ -33,7 +35,14 @@ public class MypageController {
 		mypageDTO.setShopCd(shopCd);
 		mypageDTO.setCartshopQty(cartshopQty);
 		
-		return memberId;
+		String result = "duple";
+		if (!mypageService.checkDuplicatedCart(mypageDTO)) {
+			mypageService.addCart(mypageDTO);
+			session.setAttribute("myCartCnt" , memberService.getMyCartCnt((memberId)));
+			result = "notDuple";
+		} 
+		
+		return result;
 		
 	}
 
@@ -47,6 +56,7 @@ public class MypageController {
 		
 		String memberId = (String)session.getAttribute("memberId");
 		mv.addObject("cartList" , mypageService.getMyCartList(memberId));
+		mv.addObject("countCartList", mypageService.countCartList(memberId));
 		
 		return mv;
 		

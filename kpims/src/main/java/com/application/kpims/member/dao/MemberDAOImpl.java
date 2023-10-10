@@ -20,7 +20,12 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public String selectLogin(MemberDTO memberDTO) throws Exception {
-		return sqlSession.selectOne("member.select_Login", memberDTO);
+		return sqlSession.selectOne("member.selectLogin", memberDTO);
+	}
+
+	@Override
+	public int selectMyCartCnt(String memberId) {
+		return sqlSession.selectOne("member.selectMyCartCnt", memberId);
 	}
 
 	

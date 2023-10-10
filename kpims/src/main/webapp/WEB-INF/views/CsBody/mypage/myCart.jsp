@@ -31,7 +31,7 @@
 		<div class="untree_co-section before-footer-section">
             <div class="container">
               <div class="row mb-5">
-                <form class="col-md-12" method="post">
+                <form class="col-md-12">
                   <div class="site-blocks-table">
                     <table class="table">
                       <thead>
@@ -64,7 +64,7 @@
                             <h2 class="h5 text-black">"${myCart.shopNm }"</h2>
                           </td>
                           <td class="product-stoke">
-                          	<input type="text" id="cartGoodsQty${myCart.cartCd }" value="${myCart.cartShopQty }" />
+                          	<input type="text" id="cartShopQty${myCart.cartCd }" value="${myCart.cartShopQty }" />
                           </td>
                           <td class="product-price">
                           	<h2 class="h5 text-black">
