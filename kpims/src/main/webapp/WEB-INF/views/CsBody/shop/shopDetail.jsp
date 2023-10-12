@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script>
+<script type="text/javascript">
 
   function processToCart(shopCd) {
 	  
@@ -45,6 +45,7 @@
 			location.href = "${contextPath }/member/login";
 		}
   }
+  
  
 	let quantity = $(".quantity_input").val();
 	$(".plus_btn").on("click", function(){
@@ -105,19 +106,11 @@
                                 </li>
                                 <li>
                                     <span>포인트 : </span>
-                                    <p>${shopDTO.point }P</p>
-                                </li>
-                                <li>
-                                    <span>할인률 : </span>
-                                    <p>${shopDTO.discountRate }%</p>
+                                    <p>${shopDTO.point } 포인트 접립예정.</p>
                                 </li>
                                 <li>
                                     <span>배송비 : </span>
-                                    <p>${shopDTO.deliveryPrice }원</p>
-                                </li>
-                                <li>
-                                    <span>재고 : </span>
-                                    <p>${shopDTO.stock } 개</p>
+                                    <p>${shopDTO.deliveryPrice }</p>
                                 </li>
                             </ul>
                         <div class="product__details__button">

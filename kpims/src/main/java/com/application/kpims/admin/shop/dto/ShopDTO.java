@@ -14,7 +14,7 @@ public class ShopDTO {
 	private int stock;
 	private String salesStatus;
 	private int point;
-	private int deliveryPrice;
+	private String deliveryPrice;
 	private String part;
 	private String contentsOrder;
 	private String intro;
@@ -62,10 +62,10 @@ public class ShopDTO {
 	public void setPoint(int point) {
 		this.point = point;
 	}
-	public int getDeliveryPrice() {
+	public String getDeliveryPrice() {
 		return deliveryPrice;
 	}
-	public void setDeliveryPrice(int deliveryPrice) {
+	public void setDeliveryPrice(String deliveryPrice) {
 		this.deliveryPrice = deliveryPrice;
 	}
 	public String getPart() {

@@ -79,8 +79,13 @@
                           <input type="text" class="form-control" id="point" name="point" value="${shopDTO.point }">
                         </div>
                         <div class="mb-3">
-                          <label class="form-label" for="basic-default-company">배송비<span>*</span></label>
-                          <input type="text" class="form-control" id="deliveryPrice" name="deliveryPrice" value="${shopDTO.deliveryPrice }">
+                          <label class="form-label" for="basic-default-company">배송비</label>
+                        <select id="deliveryPrice" name="deliveryPrice">
+                        	<option value="무료">무료</option>
+                        	<option value="2,500">2,500</option>
+                        	<option value="10,000">10,000</option>
+                        </select>
+                        
                         </div>
                         <div class="col-sm-12">
                                 <div class="form-label">

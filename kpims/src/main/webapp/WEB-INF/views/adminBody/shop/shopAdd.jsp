@@ -76,7 +76,12 @@
                         </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-company">배송비</label>
-                          <input type="text" class="form-control" id="deliveryPrice" name="deliveryPrice" placeholder="배송비를 입력하세요." />
+                        <select id="deliveryPrice" name="deliveryPrice">
+                        	<option value="Free">무료</option>
+                        	<option value="NoFree">2,500</option>
+                        	<option value="OneHundredd">10,000</option>
+                        </select>
+                        
                         </div>
                         <div class="col-sm-12">
                                 <div class="form-label">

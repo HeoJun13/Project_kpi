@@ -26,8 +26,8 @@ public class MypageController {
 	
 	@GetMapping("/addCart")
 	public @ResponseBody String addCart(@RequestParam ("shopCd") int shopCd , @RequestParam ("cartshopQty") int cartshopQty , HttpServletRequest request) throws Exception {
-		HttpSession session = request.getSession();
 		
+		HttpSession session = request.getSession();
 		String memberId = (String)session.getAttribute("memberId");
 		
 		MypageDTO mypageDTO = new MypageDTO();

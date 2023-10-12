@@ -33,8 +33,8 @@ public class AdminShopController {
 	@Autowired
 	private ShopService shopService;
 	
-	private final String SHOP_IMAGE_REPO_PATH = "C:\\Project_Files\\";	
-	//private final String SHOP_IMAGE_REPO_PATH = "/Users/junhoheo/upload/";	
+	//private final String SHOP_IMAGE_REPO_PATH = "C:\\Project_Files\\";	
+	private final String SHOP_IMAGE_REPO_PATH = "/Users/junhoheo/upload/";	
 	
 	@GetMapping("/add")
 	public ModelAndView add() {
@@ -60,7 +60,7 @@ public class AdminShopController {
 		shopDTO.setSalesStatus(multipartRequest.getParameter("salesStatus"));
 		shopDTO.setPart(multipartRequest.getParameter("part"));
 		shopDTO.setPoint(Integer.parseInt(multipartRequest.getParameter("point")));
-		shopDTO.setDeliveryPrice(Integer.parseInt(multipartRequest.getParameter("deliveryPrice")));
+		shopDTO.setDeliveryPrice(multipartRequest.getParameter("deliveryPrice"));
 		shopDTO.setIntro(multipartRequest.getParameter("intro"));
 		
 		
@@ -128,7 +128,7 @@ public class AdminShopController {
 		shopDTO.setSalesStatus(multipartRequest.getParameter("salesStatus"));
 		shopDTO.setPart(multipartRequest.getParameter("part"));
 		shopDTO.setPoint(Integer.parseInt(multipartRequest.getParameter("point")));
-		shopDTO.setDeliveryPrice(Integer.parseInt(multipartRequest.getParameter("deliveryPrice")));
+		shopDTO.setDeliveryPrice(multipartRequest.getParameter("deliveryPrice"));
 		shopDTO.setIntro(multipartRequest.getParameter("intro"));
 		
 		
