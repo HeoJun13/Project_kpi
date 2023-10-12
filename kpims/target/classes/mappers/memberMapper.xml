@@ -21,6 +21,17 @@
 			)		
 		</insert>
 		
+		<select id="checkId" parameterType="String" resultType="int">
+	        SELECT 
+	        		COUNT(*)
+	        FROM 
+	        		MEMBER 
+	        WHERE 
+	        		MEMBER_ID = #{memberId}
+	   		
+	   	</select>
+		
+		
 		<select id="selectLogin" resultType="String">
 			SELECT
 					*
@@ -28,7 +39,6 @@
 					MEMBER
 			WHERE
 					MEMBER_ID = #{memberId} AND PASSWD = #{passwd}		
-			
 		</select>
 		
 		<select id="selectMyCartCnt" resultType="int" parameterType="String">

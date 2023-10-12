@@ -9,7 +9,7 @@
 			 		<put-attribute name="footer" value="/WEB-INF/views/adminLayout/indexLayout/footer.jsp"/> 	
 			 	</definition>
 			 	
-			 	<definition name="/admin/shop"  extends="basicLayout">	
+			 	<definition name="/admin/shopAdd"  extends="basicLayout">	
 			 		<put-attribute name="content" value="/WEB-INF/views/adminBody/shop/shopAdd.jsp"/>	
 			 	</definition>
 			 	

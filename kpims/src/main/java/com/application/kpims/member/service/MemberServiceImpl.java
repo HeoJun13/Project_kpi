@@ -40,6 +40,14 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAO.selectMyCartCnt(memberId);
 	}
 
+	@Override
+	public int checkId(String memberId) {
+		int result = 0;
+        
+        result = memberDAO.checkId(memberId);
+        return result;
+	}
+
 	
 
 

@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.application.kpims.member.dto.MemberDTO;
@@ -45,6 +47,22 @@ public class MemberController {
 	return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
 	
 	}
+	
+	@RequestMapping("/checkId.do")
+    @ResponseBody //ajax 값을 바로jsp 로 보내기위해 사용
+    public String checkId(@RequestParam("memberId") String memberId) {
+		 String result="N";
+        
+        int flag = memberService.checkId(memberId);
+        
+        if(flag == 1) result ="Y"; 
+        //아이디가 있을시 Y 없을시 N 으로jsp view 로 보냄
+        return result;
+    }
+	
+	
+	
+	
 	@GetMapping("/login")
 	public ModelAndView login() throws Exception{
 		return new ModelAndView("/CsBody/member/login");

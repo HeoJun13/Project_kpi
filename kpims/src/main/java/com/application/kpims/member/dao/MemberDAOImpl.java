@@ -17,6 +17,11 @@ public class MemberDAOImpl implements MemberDAO {
 	public void insertMember(MemberDTO memberDTO) throws Exception{
 		sqlSession.insert("member.insertMember" , memberDTO);
 	}
+	
+	@Override
+	public int checkId(String memberId) {
+		return sqlSession.selectOne("member.checkId" , memberId);
+	}
 
 	@Override
 	public String selectLogin(MemberDTO memberDTO) throws Exception {
@@ -27,6 +32,7 @@ public class MemberDAOImpl implements MemberDAO {
 	public int selectMyCartCnt(String memberId) {
 		return sqlSession.selectOne("member.selectMyCartCnt", memberId);
 	}
+
 
 	
 

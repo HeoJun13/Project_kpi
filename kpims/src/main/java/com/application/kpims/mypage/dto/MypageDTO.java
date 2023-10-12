@@ -13,7 +13,6 @@ public class MypageDTO {
 	private String memberId;  // 회원아이디
 	private String shippingInfo; // 배송정보
 	private Date enrollDt;
-	
 	public long getCartCd() {
 		return cartCd;
 	}
@@ -55,7 +54,7 @@ public class MypageDTO {
 		return "MypageDTO [cartCd=" + cartCd + ", shopCd=" + shopCd + ", cartshopQty=" + cartshopQty + ", memberId="
 				+ memberId + ", shippingInfo=" + shippingInfo + ", enrollDt=" + enrollDt + "]";
 	}
-
+	
 	
 	
 }

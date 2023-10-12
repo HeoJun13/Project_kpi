@@ -9,6 +9,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script type="text/javascript">
 
   function processToCart(shopCd) {
@@ -46,17 +48,6 @@
 		}
   }
   
- 
-	let quantity = $(".quantity_input").val();
-	$(".plus_btn").on("click", function(){
-		$(".quantity_input").val(++quantity);
-	});
-	$(".minus_btn").on("click", function(){
-		if(quantity > 1){
-			$(".quantity_input").val(--quantity);	
-		}
-	});
-	
 	
 </script>
 </head>
@@ -116,14 +107,14 @@
                         <div class="product__details__button">
                             <div class="quantity">
                                 <span>수량 : </span>
-                                <div class="pro-qty">
-	                                <span>
-                                		<button class="minus_btn">-</button>
-	                                </span>
-                                    <input type="text" id="orderShopQty" name="orderShopQty" class="quantity_input" value="1">
-                                	<span>
-	                               	 	<button class="plus_btn">+</button>
-                                	</span>
+                                <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 230px;" >
+	                                <div class="input-group-prepend">
+                                <button class="btn btn-outline-black decrease" type="button">&minus;</button>
+                            		  </div>
+                                    <input type="text" id="cartshopQty" name="cartshopQty" class="form-control text-center quantity-amount" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                	<div class="input-group-append">
+                                <button class="btn btn-outline-black increase" type="button">&plus;</button>
+                              		</div>
                                 </div>
                             </div>
                             <a href="javascript:processToCart(${shopDTO.shopCd });" class="cart-btn"><span></span> 장바구니</a>

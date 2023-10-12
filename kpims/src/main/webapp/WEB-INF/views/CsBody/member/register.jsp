@@ -20,7 +20,44 @@
 		<link href="${contextPath }/resources/CsBoostrap/css/tiny-slider.css" rel="stylesheet">
 		<link href="${contextPath }/resources/CsBoostrap/css/style.css" rel="stylesheet">
 		<title>Furni Free Bootstrap 5 Template for Furniture and Interior Design Websites by Untree.co </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script>
+	$(document).ready(function() {
 		
+	    $("#checkId").click(function(){
+	    	
+	    	let  memberId = $("#memberId").val();
+	        
+	    	$.ajax({
+	            type:"post", //get 형식으로 controller 에 보내기위함!!
+	            url:"${contextPath}/member/checkId.do", // 컨트롤러로 가는 mapping 입력
+	            data: {"memberId": memberId}, // 원하는 값을 중복확인하기위해서  JSON 형태로 DATA 전송
+	            success: function(data){ 
+	            	
+	                if(data == "N"){ // 만약 성공할시
+	                	result = "사용 가능한 아이디입니다.";
+	                    $("#result_checkId").html(result).css({
+										                    	"color" : "#0D6EFD",
+																"font-weight" : "bold",
+																"font-size" : "10px"});
+	                    $("#nickname").trigger("focus");
+	             
+	                }else{ // 만약 실패할시
+	                	result="이미 사용중인 아이디입니다.";
+	                     $("#result_checkId").html(result).css({
+																"color" : "#FA3E3E",
+																"font-weight" : "bold",
+																"font-size" : "10px"});
+	                     $("#memberId").val("").trigger("focus");
+	             }
+	           },
+	           error : function(error){alert(JSON.stringify(error));}
+	        });
+	    });
+   	});
+	
+	
+	</script>
 	</head>
 
 	<body>
@@ -62,16 +99,13 @@
 		            <h2 class="h4 mb-3 text-black">회원정보를 입력해주세요</h2>
 		              <label for="memberId" class="text-black"><span class="text-danger"></span></label>
 		             <input type="email" class="form-control" id="memberId" name="memberId"  placeholder="이메일">
-		             <button type="button" id="btn" style="width: 20%; padding-left: 0">이메일 중복확인</button>
-		             <p id="idcheck"></p>
+		             <button type="button" id="checkId" style="width: 30%; padding-left: 0">이메일 중복확인</button>
+		            <div><span id="result_checkId" style="font-size:12px;"></span></div>
 		            </div>
 		            <div class="form-group row">
 		              <div class="col-md-12">
 		                <label for="nickname" class="text-black"><span class="text-danger"></span></label>
 		                <input type="text" class="form-control" id="nickname" name=nickname placeholder="닉네임">
-		             	<!--   <c:if test="${message=='fault'}">
-							<p id="nncheck">중복된 닉네임입니다.</p>
-						</c:if>	 -->
 		              </div>
 		            </div>
 		            

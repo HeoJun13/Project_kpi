@@ -23,12 +23,14 @@ public class MypageController {
 	private MypageService mypageService;
 	private MemberService memberService;
 	
-	
+
 	@GetMapping("/addCart")
-	public @ResponseBody String addCart(@RequestParam ("shopCd") int shopCd , @RequestParam ("cartshopQty") int cartshopQty , HttpServletRequest request) throws Exception {
+	@ResponseBody
+	public String addCart(@RequestParam ("shopCd") int shopCd , @RequestParam ("cartshopQty") int cartshopQty , HttpServletRequest request) throws Exception {
 		
 		HttpSession session = request.getSession();
 		String memberId = (String)session.getAttribute("memberId");
+		
 		
 		MypageDTO mypageDTO = new MypageDTO();
 		mypageDTO.setMemberId(memberId);
@@ -55,7 +57,7 @@ public class MypageController {
 		mv.setViewName("/mypage/cartlist");
 		
 		String memberId = (String)session.getAttribute("memberId");
-		mv.addObject("cartList" , mypageService.getMyCartList(memberId));
+		mv.addObject("cartlist" , mypageService.getMyCartList(memberId));
 		mv.addObject("countCartList", mypageService.countCartList(memberId));
 		
 		return mv;

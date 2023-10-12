@@ -25,6 +25,22 @@
 					</div>
 				</div>
 		<!-- End Hero Section -->
+		
+		
+	<!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
+                        <span>cartList</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
 
 		
 
@@ -46,31 +62,40 @@
                       </thead>
                       <tbody>
                     	<c:choose>
-                    		<c:when test="${empty cartList}">
+                    		<c:when test="${empty cartlist}">
                     			<tr align="center">
                             		<td colspan="6"><h5>장바구니가 비어있습니다.</h5></td>
                            		 </tr>
                     		</c:when>
                     	 <c:otherwise>
-                    		 <c:forEach var="myCart" items="${CartList }">
+                    		 <c:forEach var="MyCart" items="${cartlist }">
                     		<tr>
                           <td class="product-thumbnail">
                           <div class="checkbox checkbox-styled no-margin"></div>
                             <div>
-                            	<img src="${contextPath }/admin/project/thumbnails?shopFileName=${myCart.shopFileName }" width="100" height="100" alt="Image" class="img-fluid">
+                            	<img src="${contextPath }/admin/project/thumbnails?shopFileName=${MyCart.shopFileName }" width="100" height="100" alt="Image" class="img-fluid">
                             </div>
                           </td>
                           <td class="product-name">
-                            <h2 class="h5 text-black">"${myCart.shopNm }"</h2>
+                            <h2 class="h5 text-black">"${MyCart.shopNm }"</h2>
                           </td>
-                          <td class="product-stoke">
-                          	<input type="text" id="cartShopQty${myCart.cartCd }" value="${myCart.cartShopQty }" />
+                         <td>
+                            <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
+                              <div class="input-group-prepend">
+                                <button class="btn btn-outline-black decrease" type="button">&minus;</button>
+                              </div>
+                              <input type="text" class="form-control text-center quantity-amount" value="${MyCart.cartshopQty }" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                              <div class="input-group-append">
+                                <button class="btn btn-outline-black increase" type="button">&plus;</button>
+                              </div>
+                            </div>
+        
                           </td>
                           <td class="product-price">
                           	<h2 class="h5 text-black">
-                          	<span style="text-decoration: line-through; color: gray" ><fmt:formatNumber value="${myCart.price }"/></span><br>
-                           	<fmt:formatNumber value="${myCart.price -  myCart.price * (myCart.discountRate / 100)}"/>
-							<input type="hidden" id="price${myCart.cartCd }" value="${myCart.price -  myCart.price * (myCart.discountRate / 100)}">	
+                          	<span style="text-decoration: line-through; color: gray" ><fmt:formatNumber value="${MyCart.price }"/></span><br>
+                           	<fmt:formatNumber value="${MyCart.price -  MyCart.price * (MyCart.discountRate / 100)}"/>
+							<input type="hidden" id="price${MyCart.cartCd }" value="${MyCart.price -  MyCart.price * (MyCart.discountRate / 100)}">	
                           	</h2>
                           </td>
                           <td>

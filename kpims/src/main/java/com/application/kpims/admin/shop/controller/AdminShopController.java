@@ -33,14 +33,14 @@ public class AdminShopController {
 	@Autowired
 	private ShopService shopService;
 	
-	//private final String SHOP_IMAGE_REPO_PATH = "C:\\Project_Files\\";	
-	private final String SHOP_IMAGE_REPO_PATH = "/Users/junhoheo/upload/";	
+	private final String SHOP_IMAGE_REPO_PATH = "C:\\Project_Files\\";	
+	//private final String SHOP_IMAGE_REPO_PATH = "/Users/junhoheo/upload/";	
 	
 	@GetMapping("/add")
 	public ModelAndView add() {
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/admin/shop");
+		mv.setViewName("/admin/shopAdd");
 		
 		return mv;
 		

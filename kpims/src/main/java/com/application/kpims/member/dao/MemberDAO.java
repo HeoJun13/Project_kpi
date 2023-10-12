@@ -10,7 +10,8 @@ public interface MemberDAO {
 
 	public int selectMyCartCnt(String memberId);
 
-	//public String MemberIdCheck(String memberId);
+	public int checkId(String memberId);
+
 
 
 	

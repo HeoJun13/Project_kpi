@@ -17,9 +17,9 @@
 					<div class="row justify-content-between">
 						<div class="col-lg-5">
 							<div class="intro-excerpt">
-								<h1>Modern Interior <span clsas="d-block">Design Studio</span></h1>
-								<p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
-								<p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+								<h1><span clsas="d-block">First Portfolio</span></h1>
+								<p class="mb-4">Bogoga.</p>
+								<p><a href="${contextPath }/shop/list" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
 							</div>
 						</div>
 						<div class="col-lg-7">
@@ -97,7 +97,7 @@
 			<div class="container">
 				<div class="row justify-content-between">
 					<div class="col-lg-6">
-						<h2 class="section-title">Why Choose Us</h2>
+						<h2 class="section-title">Why Choose me</h2>
 						<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
 
 						<div class="row my-5">
@@ -106,7 +106,7 @@
 									<div class="icon">
 										<img src="${contextPath }/resources/CsBoostrap/images/truck.svg" alt="Image" class="imf-fluid">
 									</div>
-									<h3>Fast &amp; Free Shipping</h3>
+									<h3>빠르고 &amp; 무료</h3>
 									<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
 								</div>
 							</div>
@@ -116,7 +116,7 @@
 									<div class="icon">
 										<img src="${contextPath }/resources/CsBoostrap/images/bag.svg" alt="Image" class="imf-fluid">
 									</div>
-									<h3>Easy to Shop</h3>
+									<h3>쉬운쇼핑</h3>
 									<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
 								</div>
 							</div>
@@ -126,7 +126,7 @@
 									<div class="icon">
 										<img src="${contextPath }/resources/CsBoostrap/images/support.svg" alt="Image" class="imf-fluid">
 									</div>
-									<h3>24/7 Support</h3>
+									<h3>보증 3년</h3>
 									<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
 								</div>
 							</div>
@@ -136,7 +136,7 @@
 									<div class="icon">
 										<img src="${contextPath }/resources/CsBoostrap/images/return.svg" alt="Image" class="imf-fluid">
 									</div>
-									<h3>Hassle Free Returns</h3>
+									<h3>무료환불</h3>
 									<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
 								</div>
 							</div>
