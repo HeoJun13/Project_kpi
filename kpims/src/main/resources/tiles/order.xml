@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
-		
-			<tiles-definitions>
+	<tiles-definitions>
 				<definition name="CsbasicLayout" 	   template="/WEB-INF/views/CsLayout/layout.jsp">		
 			 		<put-attribute name="header" value="/WEB-INF/views/CsLayout/header.jsp"/>	
 			 		<put-attribute name="footer" value="/WEB-INF/views/CsLayout/footer.jsp"/> 	
-			 	</definition>
-			 	
-			 	<definition name="/mypage/cartlist"  extends="CsbasicLayout">	
-			 		<put-attribute name="contact" value="/WEB-INF/views/CsBody/mypage/myCart.jsp"/>	
 			 	</definition>
 			 	
 			 	<definition name="/mypage/orderdetail"  extends="CsbasicLayout">	

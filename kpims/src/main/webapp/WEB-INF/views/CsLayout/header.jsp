@@ -23,15 +23,30 @@
 
 				<div class="collapse navbar-collapse" id="navbarsFurni" >
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="nav-item active">
-							<a class="nav-link" href="${contextPath }/customer/project/main">Home</a>
-						</li>
+					    <li><a class="nav-link" href="${contextPath }/customer/project/main">Home</a>
 						<li><a class="nav-link" href="${contextPath }/shop/list">사무용의자</a></li>
 						<li><a class="nav-link" href="about.html">About us</a></li>
-						<li><a class="nav-link" href="services.html">Services</a></li>
-						<li><a class="nav-link" href="blog.html">Blog</a></li>
-						<li><a class="nav-link" href="contact.html">Contact</a></li>
 					</ul>
+					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-3">
+						<li><a class="nav-link" href="blog.html">회원관리</a>
+						<ul class="dropdown">
+                          <li><a href="#" class="text-gray-dark _fade_link">정보 수정</a></li>
+                         <li class="">
+						   <a href="/shop_mypage/?m2=point_list" class="text-gray-dark _fade_link">포인트</a>
+						</li>
+                       	</ul>
+                       	
+						</li>
+						
+						<li><a class="nav-link" href="contact.html">배송지관리</a>
+						<ul class="dropdown">
+                          <li class="">
+							<a href="/shop_mypage/?m2=order" class="text-gray-dark _fade_link">주문 <span class="hidden-xs">조회</span></a>
+						</li>
+                          <li><a href="#" class="text-gray-dark _fade_link">취소/교환/반품</a></li>
+                       	</ul>
+                       	</li>
+					</ul>	
 					<c:choose>
                     		<c:when test="${sessionScope.memberId eq null }">
 		                        <div class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-3">
@@ -40,25 +55,54 @@
 		                        </div>
                     		</c:when>
                     		<c:otherwise>
-                    		<div class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-3">
-                    			<a class="nav-link">${memberDTO.nickname } 님.</a>
-                    		</div>
 		                        <div class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-3">
 		                            <a class="nav-link" href="${contextPath }/member/logout">로그아웃</a>
 		                        </div>
                     		</c:otherwise>
                     	</c:choose>
+                    	
 					
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-3">
-						<li><a class="nav-link" href="${contextPath }/member/login"><img src="${contextPath }/resources/CsBoostrap/images/user.svg"></a></li>
-						<li><a class="nav-link" href="${contextPath }/mypage/cartlist"><img src="${contextPath }/resources/CsBoostrap/images/cart.svg"></a></li>
-						<li><a class="nav-link" href="contact.html">커뮤니티</a></li>
+					<c:choose>
+                    		<c:when test="${sessionScope.memberId eq null }">
+						<li class="nav-link">
+						<a href="${contextPath }/member/login">
+						<span><img src="${contextPath }/resources/CsBoostrap/images/user.svg">&nbsp;</span>
+						<span class="nav-link">마이보고</span>
+						</a>
+						</li>
+						</c:when>
+						
+						<c:otherwise>
+						<li class="nav-link">
+						<a href="${contextPath }/mypage/cartlist">
+						<span><img src="${contextPath }/resources/CsBoostrap/images/user.svg">&nbsp;</span>
+						<span class="nav-link">마이페이지</span>
+						</a>
+						</li>
+						</c:otherwise>
+					</c:choose>	
+					
+						<li class="nav-link">
+						<a href="${contextPath }/mypage/cartlist">
+						<span><img src="${contextPath }/resources/CsBoostrap/images/cart.svg">&nbsp;</span>
+						<span class="nav-link">장바구니</span>
+						</a>
+						</li>
+						
+						<li><a class="nav-link" href="contact.html">커뮤니티</a>
+						<ul class="dropdown">
+                          <li><a href="#" class="text-gray-dark _fade_link">1:1 문의</a></li>
+                          <li>
+							<a href="javascript:" onclick="SITE_MEMBER.openGoodbye();" class="text-gray-dark _fade_link">회원탈퇴</a>
+						</li>
+                       	</ul>
+						</li>
 					</ul>
 				</div>
 			</div>
 				
 		</nav>
 		<!-- End Header/Navigation -->
-
 </body>
 </html>

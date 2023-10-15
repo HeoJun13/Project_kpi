@@ -24,11 +24,12 @@
 						</div>
 					</div>
 				</div>
+    
 		<!-- End Hero Section -->
 		
 		
 	<!-- Breadcrumb Begin -->
-    <div class="breadcrumb-option">
+    <div class="breadcrumb-option" align="right">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -41,10 +42,10 @@
         </div>
     </div>
     <!-- Breadcrumb End -->
+    
 
 		
 
-		<div class="untree_co-section before-footer-section">
             <div class="container">
               <div class="row mb-5">
                 <form class="col-md-12">
@@ -110,7 +111,6 @@
                             </div>
         
                           </td>
-                          <td>$49.00</td>
                           <td><a href="#" class="btn btn-black btn-sm">X</a></td>
                         </tr>
                     		 </c:forEach>
@@ -121,7 +121,6 @@
                   </div>
                 </form>
               </div>
-        
               <div class="row">
                 <div class="col-md-6">
                   <div class="row mb-5">
@@ -166,7 +165,7 @@
         
                       <div class="row">
                         <div class="col-md-12">
-                          <button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='checkout.html'">주문하기</button>
+                          <button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='http://localhost:8080/kpims/order/orderShop'">주문하기</button>
                         </div>
                       </div>
                     </div>
@@ -174,7 +173,6 @@
                 </div>
               </div>
             </div>
-          </div>
 
 </body>
 </html>
