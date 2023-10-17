@@ -18,8 +18,8 @@ import net.coobird.thumbnailator.Thumbnails;
 public class MainController {
 	
 	
-	private final String SHOP_IMAGE_REPO_PATH = "C:\\Project_Files\\";
-	//private final String SHOP_IMAGE_REPO_PATH = "/Users/junhoheo/upload/";
+	//private final String SHOP_IMAGE_REPO_PATH = "C:\\Project_Files\\";
+	private final String SHOP_IMAGE_REPO_PATH = "/Users/junhoheo/upload/";
 	
 	@GetMapping("/main")
 	public ModelAndView main() throws Exception {
