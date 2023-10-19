@@ -77,6 +77,16 @@
 		WHERE
 				MEMBER_ID = #{memberId}
 	</select>
+	
+	<delete id="deleteCart" parameterType="int">
+		DELETE FROM
+				CART
+		WHERE
+				CART_CD IN 
+		<foreach collection="array" item="cartCd" separator="," open="("  close=")" >
+				#{cartCd}
+		</foreach>
+	</delete>
 
 
 </mapper>

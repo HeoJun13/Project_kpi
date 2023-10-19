@@ -21,7 +21,7 @@
 	}
 	else {
 		$.ajax({
-			url : "${contextPath }/mypage/addCart",
+			url : "${contextPath }/mypage/addcart",
 			method : "get",
 			data : {"shopCd" : shopCd , "cartshopQty" : $("#cartshopQty").val()},
 			success : function(result) {

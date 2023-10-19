@@ -14,6 +14,7 @@ public interface MypageService {
 	public boolean checkDuplicatedCart(MypageDTO mypageDTO);
 	public void addCart(MypageDTO mypageDTO);
 	public int countCartList(String memberId);
+	public void removeCart(int[] deleteCartCdList);
 
 
 }

@@ -9,6 +9,45 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<script>
+
+$().ready(function(){
+
+	getTotalPrice();
+	
+	$("[name='cartCd']").change(function(){
+		getTotalPrice();
+	});
+	
+});
+
+function getTotalPrice () {
+	var totalPrice = 0;
+	$("[name='cartCd']:checked").each(function(){
+		var tempCartCd = $(this).val();
+		totalPrice += Number($("#price" + tempCartCd).val()) * Number($("#cartShopQty" + tempCartCd).val());
+	});
+	totalPrice = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + " 원";
+	$("#totalPrice").html(totalPrice);
+}
+
+
+function removeCart() {
+		
+	var cartCdList = "";
+	if (confirm("삭제 하시겠습니까?")) {
+		
+		$("input[name='cartCd']:checked").each(function(){
+			cartCdList += $(this).val() + ",";
+		});
+		location.href = "${contextPath}/mypage/deleteCart?cartCdList=" + cartCdList;
+	}
+	
+}
+
+
+
+</script>
 <body>
 
 	
@@ -34,8 +73,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
-                        <span>cartList</span>
+                        <a href=""><i class=""></i><strong>장바구니</strong></a>
+                        ><span>주문/결제</span>
+                        ><span>주문완료</span>
                     </div>
                 </div>
             </div>
@@ -111,7 +151,7 @@
                             </div>
         
                           </td>
-                          <td><a href="#" class="btn btn-black btn-sm">X</a></td>
+                          <td><a href="javascript:removeCart();" class="btn btn-black btn-sm">X</a></td>
                         </tr>
                     		 </c:forEach>
                     		</c:otherwise>

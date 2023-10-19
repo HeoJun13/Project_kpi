@@ -26,201 +26,133 @@
 				</div>
 		<!-- End Hero Section -->
 		
-		<div class="breadcrumb-option" >
+		<div class="breadcrumb-option" align="right">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="#"><i class=""></i>주문결제</a>
+                        <a href="#"><i class="text-black font-weight-bold"></i><strong>주문결제</strong></a>
                         < <a href="#"> 주문완료</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-		<div class="untree_co-section">
-		    <div class="container">
-		      <div class="row">
-		        <div class="col-md-6 mb-5 mb-md-0">
-		          <h2 class="h3 mb-3 text-black">구매자정보</h2>
-		          <div class="p-3 p-lg-5 border bg-white">
-		            <div class="form-group">
-		              <label for="c_country" class="text-black">이름 <span class="text-danger">*</span></label>
-		              <input type="text" class="form-control" id="c_fname" name="c_fname">
+    
+		<div class="untree_co-section" align="center">
+		  <div class="row mb-5">
+		            <div class="col-md-12">
+		        <div class="col-md-6 mb-5 mb-md-0" align="left">
+		              <h2 class="h3 mb-3 text-black">구매자정보</h2>
+		              <div class="p-3 p-lg-5 border bg-white">
+		              <table class="table site-block-order-table mb-3" border="1">
+						<thead>
+		                    <th></th>
+		                    <th></th>
+		                    <th></th>
+		                    <th></th>
+		                  </thead>
+		                 <div class="form-group">
+		               <tr>
+	                      <td class="text-black font-weight-bold" align="right"><strong>이름 :</strong></td>
+	                      <td class="text-black">허준호</td>
+	                      <td></td>
+		               </tr>
 		            </div>
 		            <div class="form-group row">
 		              <div class="col-md-6">
-		                <label for="c_fname" class="text-black">이메일 <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_fname" name="c_fname">
+		               <tr>
+	                      <td class="text-black font-weight-bold" align="right"><strong>이메일 :</strong></td>
+	                      <td class="text-black">wnsgh9857@gmail.com</td>
+		              	  <td></td>
+		               </tr>
 		              </div>
 		            </div>
 
 		            <div class="form-group row">
 		              <div class="col-md-12">
-		                <label for="c_companyname" class="text-black">휴대폰 번호 </label>
-		                <input type="text" class="form-control" id="c_companyname" name="c_companyname">
+		                <tr>
+	                      <td class="text-black font-weight-bold" align="right"><strong>연락처 :</strong></td>
+	                      <td class="text-black">010-4924-0872</td>
+		               	  <td></td>
+		               </tr>
 		              </div>
-		            </div>
 
+		              </div>
+		              </table>
+		            </div>
+		          </div>
+		            </div>
+		             </div> 
+		            
+ 				 <div class="row mb-5">
+		            <div class="col-md-12">
+		        <div class="col-md-6 mb-5 mb-md-0" align="left">
+		              <h2 class="h3 mb-3 text-black">받는사람정보</h2>
+		              <div class="p-3 p-lg-5 border bg-white">
+		                <table class="table site-block-order-table mb-3" border="1">
+		                <thead>
+		                    <th></th>
+		                    <th></th>
+		                    <th></th>
+		                    <th></th>
+		                  </thead>
+		                  
 		            <div class="form-group row">
 		              <div class="col-md-12">
-		                <label for="c_address" class="text-black">주소 <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_address" name="c_address" placeholder="Street address">
+		              <tr>
+		                <td class="text-black font-weight-bold" align="right"><strong>이름 :</strong></td>
+		                <td class="text-black"  id="" name="" >허준호</td>
+		              </tr>
 		              </div>
 		            </div>
-
-		            <div class="form-group mt-3">
-		              <input type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)">
-		            </div>
-
+		           
 		            <div class="form-group row">
-		              <div class="col-md-6">
-		                <label for="c_state_country" class="text-black">State / Country <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_state_country" name="c_state_country">
-		              </div>
-		              <div class="col-md-6">
-		                <label for="c_postal_zip" class="text-black">Posta / Zip <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_postal_zip" name="c_postal_zip">
+		              <div class="col-md-12">
+		              <tr>
+		                <td class="text-black font-weight-bold" align="right"><strong>주소 :</strong></td>
+		                <td class="text-black"  id="" name="" >서울시 송파구 오금동 115-5번지 201호</td>
+		              </tr>
 		              </div>
 		            </div>
+
 
 		            <div class="form-group row mb-5">
 		              <div class="col-md-6">
-		                <label for="c_email_address" class="text-black">Email Address <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_email_address" name="c_email_address">
-		              </div>
-		              <div class="col-md-6">
-		                <label for="c_phone" class="text-black">Phone <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_phone" name="c_phone" placeholder="Phone Number">
+		              <tr>
+		                <td class="text-black font-weight-bold" align="right"><strong>연락처 :</strong></td>
+		                <td class="text-black" id="" name="">010-4924-0872</td>
+		              </tr>
 		              </div>
 		            </div>
 
-		            <div class="form-group">
-		              <label for="c_create_account" class="text-black" data-bs-toggle="collapse" href="#create_an_account" role="button" aria-expanded="false" aria-controls="create_an_account"><input type="checkbox" value="1" id="c_create_account"> Create an account?</label>
-		              <div class="collapse" id="create_an_account">
-		                <div class="py-2 mb-4">
-		                  <p class="mb-3">Create an account by entering the information below. If you are a returning customer please login at the top of the page.</p>
-		                  <div class="form-group">
-		                    <label for="c_account_password" class="text-black">Account Password</label>
-		                    <input type="email" class="form-control" id="c_account_password" name="c_account_password" placeholder="">
-		                  </div>
-		                </div>
-		              </div>
-		            </div>
+	                  <div class="form-group row  mb-3">
+	                    <div class="col-md-12">
+	                    <tr>
+	                      <td class="text-black font-weight-bold" align="right"><strong>배송 요청사항 :</strong></td>
+	                      <td class="text-black" id="" name="" ></td>
+	                    </tr>
+	                    </div>
+	                  </div>
 
-
-		            <div class="form-group">
-		              <label for="c_ship_different_address" class="text-black" data-bs-toggle="collapse" href="#ship_different_address" role="button" aria-expanded="false" aria-controls="ship_different_address"><input type="checkbox" value="1" id="c_ship_different_address"> Ship To A Different Address?</label>
-		              <div class="collapse" id="ship_different_address">
-		                <div class="py-2">
-
-		                  <div class="form-group">
-		                    <label for="c_diff_country" class="text-black">Country <span class="text-danger">*</span></label>
-		                    <select id="c_diff_country" class="form-control">
-		                      <option value="1">Select a country</option>    
-		                      <option value="2">bangladesh</option>    
-		                      <option value="3">Algeria</option>    
-		                      <option value="4">Afghanistan</option>    
-		                      <option value="5">Ghana</option>    
-		                      <option value="6">Albania</option>    
-		                      <option value="7">Bahrain</option>    
-		                      <option value="8">Colombia</option>    
-		                      <option value="9">Dominican Republic</option>    
-		                    </select>
-		                  </div>
-
-
-		                  <div class="form-group row">
-		                    <div class="col-md-6">
-		                      <label for="c_diff_fname" class="text-black">First Name <span class="text-danger">*</span></label>
-		                      <input type="text" class="form-control" id="c_diff_fname" name="c_diff_fname">
-		                    </div>
-		                    <div class="col-md-6">
-		                      <label for="c_diff_lname" class="text-black">Last Name <span class="text-danger">*</span></label>
-		                      <input type="text" class="form-control" id="c_diff_lname" name="c_diff_lname">
-		                    </div>
-		                  </div>
-
-		                  <div class="form-group row">
-		                    <div class="col-md-12">
-		                      <label for="c_diff_companyname" class="text-black">Company Name </label>
-		                      <input type="text" class="form-control" id="c_diff_companyname" name="c_diff_companyname">
-		                    </div>
-		                  </div>
-
-		                  <div class="form-group row  mb-3">
-		                    <div class="col-md-12">
-		                      <label for="c_diff_address" class="text-black">Address <span class="text-danger">*</span></label>
-		                      <input type="text" class="form-control" id="c_diff_address" name="c_diff_address" placeholder="Street address">
-		                    </div>
-		                  </div>
-
-		                  <div class="form-group">
-		                    <input type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)">
-		                  </div>
-
-		                  <div class="form-group row">
-		                    <div class="col-md-6">
-		                      <label for="c_diff_state_country" class="text-black">State / Country <span class="text-danger">*</span></label>
-		                      <input type="text" class="form-control" id="c_diff_state_country" name="c_diff_state_country">
-		                    </div>
-		                    <div class="col-md-6">
-		                      <label for="c_diff_postal_zip" class="text-black">Posta / Zip <span class="text-danger">*</span></label>
-		                      <input type="text" class="form-control" id="c_diff_postal_zip" name="c_diff_postal_zip">
-		                    </div>
-		                  </div>
-
-		                  <div class="form-group row mb-5">
-		                    <div class="col-md-6">
-		                      <label for="c_diff_email_address" class="text-black">Email Address <span class="text-danger">*</span></label>
-		                      <input type="text" class="form-control" id="c_diff_email_address" name="c_diff_email_address">
-		                    </div>
-		                    <div class="col-md-6">
-		                      <label for="c_diff_phone" class="text-black">Phone <span class="text-danger">*</span></label>
-		                      <input type="text" class="form-control" id="c_diff_phone" name="c_diff_phone" placeholder="Phone Number">
-		                    </div>
-		                  </div>
-
-		                </div>
-
-		              </div>
-		            </div>
-
-		            <div class="form-group">
-		              <label for="c_order_notes" class="text-black">Order Notes</label>
-		              <textarea name="c_order_notes" id="c_order_notes" cols="30" rows="5" class="form-control" placeholder="Write your notes here..."></textarea>
-		            </div>
+		                </table>
 
 		          </div>
+		          </div>
+		         </div>
 		        </div>
+		     
 		        <div class="col-md-6">
 
 		          <div class="row mb-5">
-		            <div class="col-md-12">
-		              <h2 class="h3 mb-3 text-black">Coupon Code</h2>
-		              <div class="p-3 p-lg-5 border bg-white">
-
-		                <label for="c_code" class="text-black mb-3">Enter your coupon code if you have one</label>
-		                <div class="input-group w-75 couponcode-wrap">
-		                  <input type="text" class="form-control me-2" id="c_code" placeholder="Coupon Code" aria-label="Coupon Code" aria-describedby="button-addon2">
-		                  <div class="input-group-append">
-		                    <button class="btn btn-black btn-sm" type="button" id="button-addon2">Apply</button>
-		                  </div>
-		                </div>
-
-		              </div>
-		            </div>
-		          </div>
-
-		          <div class="row mb-5">
-		            <div class="col-md-12">
-		              <h2 class="h3 mb-3 text-black">Your Order</h2>
+		            <div class="col-md-12" align="left">
+		              <h2 class="h3 mb-3 text-black">결제정보</h2>
 		              <div class="p-3 p-lg-5 border bg-white">
 		                <table class="table site-block-order-table mb-5">
 		                  <thead>
-		                    <th>Product</th>
-		                    <th>Total</th>
+		                    <th></th>
+		                    <th></th>
+		                    <th></th>
 		                  </thead>
 		                  <tbody>
 		                    <tr>
@@ -236,44 +168,71 @@
 		                      <td class="text-black">$350.00</td>
 		                    </tr>
 		                    <tr>
-		                      <td class="text-black font-weight-bold"><strong>Order Total</strong></td>
+		                      <td class="text-black font-weight-bold"><strong>Cart Subtotal</strong></td>
+		                      <td class="text-black">$350.00</td>
+		                    </tr>
+		                    <tr>
+		                      <td class="text-black font-weight-bold"><strong>총결제 금액</strong></td>
 		                      <td class="text-black font-weight-bold"><strong>$350.00</strong></td>
 		                    </tr>
+		                    <tr>
+		                      <td class="text-black font-weight-bold"><strong>결재방법</strong></td>
+		                      <td class="text-black">
+		                      <div class="type-selector-list-wrapper">
+       							 <ul id="payTypeList" class="type-selector-list">
+
+				            <li id="rocketPayBox" class="type-selector-li">
+				                <input class="type-selector-radio" type="radio" name="payType" id="payType8" value="ROCKET_BANK">
+				                <label class="type-selector-label type-selector-label--bank" for="payType8" style="font-weight: normal;">
+				                    <span class="type-selector-label__text">계좌이체</span>
+				                </label>
+				            </li>
+				
+				                <li id="rocketPayCardBox" class="type-selector-li selected-pay-type">
+				                    <input class="type-selector-radio" type="radio" name="payType" id="payType10" value="ROCKET_CARD">
+				                    <label class="type-selector-label type-selector-label--card" for="payType10" style="font-weight: bold;">
+				                        <span class="type-selector-label__text">신용/체크카드</span>
+				                    </label>
+				                </li>
+            
+				            
+				                <li id="cardPayBox" class="type-selector-li">
+				                    <input class="type-selector-radio" type="radio" name="payType" id="payType1" value="CARD">
+				                    <label class="type-selector-label" for="payType1" style="font-weight: normal;">
+				                        <span class="type-selector-label__text">법인카드</span>
+				                    </label>
+				                </li>
+            
+           				  <td class="text-black">
+			                    <li id="phonePayBox" class="type-selector-li">
+			                        <input class="type-selector-radio" type="radio" name="payType" id="payType6" value="PHONE">
+			                        <label class="type-selector-label" for="payType6" style="font-weight: normal;">
+			                            <span class="type-selector-label__text">휴대폰</span>
+			                        </label>
+			                    </li>
+			                
+            
+				            
+				                <li id="virtualAccountPayBox" class="type-selector-li">
+				                    <input class="type-selector-radio" type="radio" name="payType" id="payType7" value="VIRTUALACCOUNT">
+				                    <label class="type-selector-label" for="payType7" style="font-weight: normal;">
+				                        <span class="type-selector-label__text">무통장입금(가상계좌)</span>
+				                    </label>
+				                </li>
+					            
+					        </ul>
+					        <p class="validate-message" style="display: none;"></p>
+					    </div>
+		             </td>
+		          </tr>
 		                  </tbody>
 		                </table>
 
-		                <div class="border p-3 mb-3">
-		                  <h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse" href="#collapsebank" role="button" aria-expanded="false" aria-controls="collapsebank">Direct Bank Transfer</a></h3>
+		                
 
-		                  <div class="collapse" id="collapsebank">
-		                    <div class="py-2">
-		                      <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-		                    </div>
-		                  </div>
-		                </div>
-
-		                <div class="border p-3 mb-3">
-		                  <h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse" href="#collapsecheque" role="button" aria-expanded="false" aria-controls="collapsecheque">Cheque Payment</a></h3>
-
-		                  <div class="collapse" id="collapsecheque">
-		                    <div class="py-2">
-		                      <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-		                    </div>
-		                  </div>
-		                </div>
-
-		                <div class="border p-3 mb-5">
-		                  <h3 class="h6 mb-0"><a class="d-block" data-bs-toggle="collapse" href="#collapsepaypal" role="button" aria-expanded="false" aria-controls="collapsepaypal">Paypal</a></h3>
-
-		                  <div class="collapse" id="collapsepaypal">
-		                    <div class="py-2">
-		                      <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
-		                    </div>
-		                  </div>
-		                </div>
-
-		                <div class="form-group">
-		                  <button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='thankyou.html'">Place Order</button>
+		                <div class="form-group" align="center">
+		                <p>위 주문 내용을 확인 하였으며, 회원 본인은 개인정보 이용 및 제공 및 결제에 동의합니다.</p>
+		                  <button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='thankyou.html'">결제하기</button>
 		                </div>
 
 		              </div>

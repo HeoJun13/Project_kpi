@@ -34,5 +34,9 @@ public class MypageDAOImpl implements MypageDAO {
 	public int selectCountMyCart(String memberId) {
 		return sqlSession.selectOne("mypage.selectCountMyCart" , memberId);
 	}
+	@Override
+	public void deleteCart(int[] deleteCartCdList) {
+		sqlSession.delete("mypage.deleteCart", deleteCartCdList);
+	}
 
 }

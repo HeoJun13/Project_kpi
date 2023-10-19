@@ -9,8 +9,8 @@ public class OrderDTO {
 	
 	private long orderCd;
 	private String memberId;
-	private int goodsCd;
-	private int orderGoodsQty;
+	private int shopCd;
+	private int ordershopQty;
 	private int paymentAmt;
 	private String ordererNm;
 	private String ordererHp;

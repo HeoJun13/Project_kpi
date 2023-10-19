@@ -36,4 +36,10 @@ public class MypageServiceImpl implements MypageService{
 		return mypageDAO.selectCountMyCart(memberId);
 	}
 
+	@Override
+	public void removeCart(int[] deleteCartCdList) {
+		mypageDAO.deleteCart(deleteCartCdList);
+	}
+
+
 }

@@ -81,7 +81,7 @@
             <div class="card-body">
               <!-- Logo -->
               <div class="app-brand justify-content-center">
-                <a href="content.jsp" class="app-brand-link gap-2">
+                <a href="${contextPath }/admin/member/login" class="app-brand-link gap-2">
                   <span class="app-brand-logo demo">
                     <svg
                       width="25"

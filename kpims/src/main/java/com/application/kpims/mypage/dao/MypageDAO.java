@@ -11,6 +11,7 @@ public interface MypageDAO {
 	public MypageDTO selectOneDuplicatedCart(MypageDTO mypageDTO);
 	public void insertCart(MypageDTO mypageDTO);
 	public int selectCountMyCart(String memberId);
+	public void deleteCart(int[] deleteCartCdList);
 
 
 }
