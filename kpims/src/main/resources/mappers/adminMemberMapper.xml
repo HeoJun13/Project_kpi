@@ -3,7 +3,7 @@
 
 <mapper namespace="admin.member">
 	
-	<select id="select_AdminLogin" resultType="String">
+	<select id="adminLogin" resultType="String">
 		SELECT 
 				* 
 		FROM 

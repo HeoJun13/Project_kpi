@@ -18,7 +18,7 @@ public class AdminMemberDAOImpl implements AdminMemberDAO {
 
 	@Override
 	public String selectAdminLogin(AdminMemberDTO adminMemberDTO) throws Exception {
-		return sqlSession.selectOne("admin.member.select_AdminLogin" , adminMemberDTO);
+		return sqlSession.selectOne("admin.member.adminLogin" , adminMemberDTO);
 	}
 
 	@Override
