@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.application.kpims.member.dto.AddressDTO;
 import com.application.kpims.member.dto.MemberDTO;
 import com.application.kpims.member.service.MemberService;
 @Controller
@@ -67,6 +68,7 @@ public class MemberController {
 	public ModelAndView login() throws Exception{
 		return new ModelAndView("/CsBody/member/login");
 	}
+	
 	@PostMapping("/login")
 	public ModelAndView login( @ModelAttribute MemberDTO memberDTO, HttpSession session) throws Exception {
 		String name = memberService.login(memberDTO , session);
@@ -96,5 +98,50 @@ public class MemberController {
 		
 		return new ResponseEntity<Object>(jsScript, responseHeaders, HttpStatus.OK);
 
+	}
+	
+	
+	@GetMapping("/addressadd")
+	public ModelAndView addressbook() {
+		
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/mypage/myAddressBook");
+		
+		return mv;
+		
+	}
+	
+	@PostMapping("/addressadd")
+	public @ResponseBody String addressadd(@RequestParam ("memberCd") int memberCd , HttpServletRequest request) throws Exception {
+		
+		HttpSession session = request.getSession();
+		String memberId = (String)session.getAttribute("memberId");
+		
+		AddressDTO addressDTO = new AddressDTO();
+		addressDTO.setMemberId(memberId);
+		addressDTO.setMemberCd(memberCd);
+		
+		String result = "duple";
+		if (!memberService.checkDuplicatedAddress(addressDTO)) {
+			 memberService.addressbook(addressDTO);
+		}
+		 
+	return result;
+	
+	}
+	
+	@GetMapping("/addresslist")
+	public ModelAndView addresslist(HttpServletRequest request) throws Exception {
+		
+		HttpSession session = request.getSession();
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/mypage/AddressList");
+		
+		String memberId = (String)session.getAttribute("memberId");
+		mv.addObject("addresslist" , memberService.getMyAddressList(memberId));
+		mv.addObject("countAddressList", memberService.countAddressList(memberId));
+		return mv;
 	}
 }

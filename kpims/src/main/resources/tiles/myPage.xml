@@ -11,8 +11,4 @@
 			 		<put-attribute name="contact" value="/WEB-INF/views/CsBody/mypage/myCart.jsp"/>	
 			 	</definition>
 			 	
-			 	<definition name="/mypage/orderdetail"  extends="CsbasicLayout">	
-			 		<put-attribute name="contact" value="/WEB-INF/views/CsBody/mypage/myOrderDetail.jsp"/>	
-			 	</definition>
-			 	
 			</tiles-definitions>

@@ -12,7 +12,8 @@
 <body>
 
 <!-- Start Header/Navigation -->
-		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+
+		<section class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
 			<div class="container">
 			<a class="navbar-brand" href="${contextPath }/customer/project/main">Bogogah<span>.</span></a>
@@ -20,7 +21,6 @@
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-
 				<div class="collapse navbar-collapse" id="navbarsFurni" >
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 					    <li><a class="nav-link" href="${contextPath }/customer/project/main">Home</a>
@@ -37,8 +37,7 @@
                        	</ul>
                        	
 						</li>
-						
-						<li><a class="nav-link" href="contact.html">배송지관리</a>
+						<li><a class="nav-link" href="${contextPath}/member/addresslist">배송지관리</a>
 						<ul class="dropdown">
                           <li class="">
 							<a href="/shop_mypage/?m2=order" class="text-gray-dark _fade_link">주문 <span class="hidden-xs">조회</span></a>
@@ -46,7 +45,7 @@
                           <li><a href="#" class="text-gray-dark _fade_link">취소/교환/반품</a></li>
                        	</ul>
                        	</li>
-					</ul>	
+					</ul>
 					<c:choose>
                     		<c:when test="${sessionScope.memberId eq null }">
 		                        <div class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-3">
@@ -68,7 +67,7 @@
 						<li class="nav-link">
 						<a href="${contextPath }/member/login">
 						<span><img src="${contextPath }/resources/CsBoostrap/images/user.svg">&nbsp;</span>
-						<span class="nav-link">마이보고</span>
+						<span class="nav-link">마이페이지</span>
 						</a>
 						</li>
 						</c:when>
@@ -101,8 +100,7 @@
 					</ul>
 				</div>
 			</div>
-				
-		</nav>
+		</section>
 		<!-- End Header/Navigation -->
 </body>
 </html>

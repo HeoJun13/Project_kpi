@@ -99,7 +99,7 @@
 		                  </thead>
 		                  
 		            <div class="form-group row">
-		              <div class="col-md-12">
+		              <div class="col-md-6">
 		              <tr>
 		                <td class="text-black font-weight-bold" align="right"><strong>이름 :</strong></td>
 		                <td class="text-black"  id="" name="" >허준호</td>

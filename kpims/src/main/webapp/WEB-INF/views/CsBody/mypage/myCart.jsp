@@ -25,7 +25,7 @@ function getTotalPrice () {
 	var totalPrice = 0;
 	$("[name='cartCd']:checked").each(function(){
 		var tempCartCd = $(this).val();
-		totalPrice += Number($("#price" + tempCartCd).val()) * Number($("#cartShopQty" + tempCartCd).val());
+		totalPrice += Number($("#price" + tempcartCd).val()) * Number($("#cartShopQty" + tempcartCd).val());
 	});
 	totalPrice = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + " 원";
 	$("#totalPrice").html(totalPrice);
@@ -33,9 +33,9 @@ function getTotalPrice () {
 
 
 function removeCart() {
-		
+	
 	var cartCdList = "";
-	if (confirm("삭제 하시겠습니까?")) {
+	if (confirm("정말로 삭제하시겠습니까?")) {
 		
 		$("input[name='cartCd']:checked").each(function(){
 			cartCdList += $(this).val() + ",";
@@ -52,6 +52,7 @@ function removeCart() {
 
 	
 <!-- Start Hero Section -->
+	
 			<div class="container">
 					<div class="row justify-content-between">
 						<div class="col-lg-5">
@@ -93,12 +94,12 @@ function removeCart() {
                     <table class="table">
                       <thead>
                         <tr>
+                          <th width="3%"></th>
                           <th class="product-thumbnail">이미지</th>
                           <th class="product-name">상품정보</th>
                           <th class="product-price">수량</th>
                           <th class="product-quantity">주문금액</th>
                           <th class="product-total">배송정보</th>
-                          <th class="product-remove">삭제</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -111,6 +112,7 @@ function removeCart() {
                     	 <c:otherwise>
                     		 <c:forEach var="MyCart" items="${cartlist }">
                     		<tr>
+                    		<td><input type="checkbox" name="cartCd" id="cartCd" value="${MyCart.cartCd }"></td>
                           <td class="product-thumbnail">
                           <div class="checkbox checkbox-styled no-margin"></div>
                             <div>
@@ -149,9 +151,7 @@ function removeCart() {
                                 <button class="btn btn-outline-black increase" type="button">&plus;</button>
                               </div>
                             </div>
-        
                           </td>
-                          <td><a href="javascript:removeCart();" class="btn btn-black btn-sm">X</a></td>
                         </tr>
                     		 </c:forEach>
                     		</c:otherwise>
@@ -165,22 +165,8 @@ function removeCart() {
                 <div class="col-md-6">
                   <div class="row mb-5">
                     <div class="col-md-6 mb-3 mb-md-0">
-                      <button class="btn btn-black btn-sm btn-block">Update Cart</button>
-                    </div>
-                    <div class="col-md-6">
-                      <button class="btn btn-outline-black btn-sm btn-block">Continue Shopping</button>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <label class="text-black h4" for="coupon">Coupon</label>
-                      <p>Enter your coupon code if you have one.</p>
-                    </div>
-                    <div class="col-md-8 mb-3 mb-md-0">
-                      <input type="text" class="form-control py-3" id="coupon" placeholder="Coupon Code">
-                    </div>
-                    <div class="col-md-4">
-                      <button class="btn btn-black">Apply Coupon</button>
+                      <a href="javascript:removeCart();">선택상픔 삭제</a>
+                      <button class="">Continue Shopping</button>
                     </div>
                   </div>
                 </div>

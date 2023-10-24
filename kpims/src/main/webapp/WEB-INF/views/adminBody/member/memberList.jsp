@@ -49,7 +49,7 @@ function gerateMemberExcelExport() {
               	<c:forEach var="memberDTO" items="${memberList }" varStatus="i">
               		 <tr>
               		 	<td>
-              		 		<h6>${i.count }</h6>
+              		 		<h6>${memberDTO.memberCd }</h6>
                        </td>
                     		<td class="fab fa-angular fa-lg text-danger me-3">
                            <!--  <h6><a href="${contextPath }/myPage/myInfo?memberId=${memberDTO.memberId}">${memberDTO.memberId} </a></h6>-->

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MemberDTO {
 	
+	private long memberCd;
 	private String memberId;
 	private String memberNm;
 	private String nickname;
@@ -18,6 +19,12 @@ public class MemberDTO {
 	private String email;
 	private String emailstsYn;
 	private Date joinDt;
+	public long getMemberCd() {
+		return memberCd;
+	}
+	public void setMemberCd(long memberCd) {
+		this.memberCd = memberCd;
+	}
 	public String getMemberId() {
 		return memberId;
 	}
@@ -86,13 +93,11 @@ public class MemberDTO {
 	}
 	@Override
 	public String toString() {
-		return "MemberDTO [memberId=" + memberId + ", memberNm=" + memberNm + ", nickname=" + nickname + ", passwd="
-				+ passwd + ", sex=" + sex + ", dateBirth=" + dateBirth + ", hp=" + hp + ", smsstsYn=" + smsstsYn
-				+ ", email=" + email + ", emailstsYn=" + emailstsYn + ", joinDt=" + joinDt + "]";
+		return "MemberDTO [memberCd=" + memberCd + ", memberId=" + memberId + ", memberNm=" + memberNm + ", nickname="
+				+ nickname + ", passwd=" + passwd + ", sex=" + sex + ", dateBirth=" + dateBirth + ", hp=" + hp
+				+ ", smsstsYn=" + smsstsYn + ", email=" + email + ", emailstsYn=" + emailstsYn + ", joinDt=" + joinDt
+				+ "]";
 	}
-	
-	
-	
 
 
 }

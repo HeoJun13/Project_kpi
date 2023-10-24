@@ -7,6 +7,7 @@
 			INSERT INTO
 					MEMBER
 			VALUES (
+				 #{memberCd},
 				 #{memberId},
 				 #{memberNm},
 				 #{nickname},
@@ -49,6 +50,77 @@
 	  		WHERE
 	  				MEMBER_ID = #{memberId}
   	</select>
+  	
+  	<insert id="insertAddress" parameterType="AddressDTO" >
+			INSERT INTO
+					ADDRESS
+			VALUES (
+				 #{addressCd},
+				 #{memberId},
+				 #{recipientNm},
+				 #{memberCd},
+				 #{postcode},
+				 #{address},
+				 #{detailAddress},
+				 #{recipientHp},
+				 #{deliveryRequest},
+				 NOW()
+			)		
+		</insert>
+		
+		<resultMap type="hashmap" id="addressMap">
+  		<result column="ADDRESS_CD"       property="AddressCd"/>
+  		<result column="MEMBER_ID"    	  property="memberId"/>
+  		<result column="RECIPIENT_NM"     property="recipientNm"/>
+  		<result column="MEMBER_CD"    	  property="memberCd"/>
+  		<result column="POSTCODE"         property="postcode"/>
+  		<result column="ADDRESS" 		  property="address"/>
+  		<result column="DETAIL_ADDRESS"   property="detailAddress"/>
+  		<result column="RECIPIENT_HP"     property="recipientHp"/>
+  		<result column="DELIVERY_REQIEST" property="deliveryRequest"/>
+  		<result column="JOIN_DT"   	      property="enrollDt"/>
+  	</resultMap>
+  	
+	<select id="selectMyAddress" parameterType="String" resultMap="addressMap">
+		SELECT
+				A.ADDRESS_CD	    AS ADDRESS_CD,
+				A.MEMBER_ID         AS MEMBER_ID,
+				A.RECIPIENT_NM      AS RECIPIENT_NM,
+				A.MEMBER_CD			AS MEMBER_CD,
+				A.POSTCODE	   	    AS POSTCODE,
+				A.ADDRESS		    AS ADDRESS,
+				A.DETAIL_ADDRESS  	AS DETAIL_ADDRESS,
+				A.RECIPIENT_HP    	AS RECIPIENT_HP,
+				A.DELIVERY_REQIEST	AS DELIVERY_REQIEST,
+				A.JOIN_DT   		AS JOIN_DT
+		FROM
+				ADDRESS	A
+		    JOIN MEMBER M
+		  		  ON A.MEMBER_CD = M.MEMBER_CD		
+		WHERE
+				A.MEMBER_ID = #{memberId}
+		ORDER BY
+				A.JOIN_DT DESC
+	</select>
+	
+	<select id="selectCountAddress" parameterType="String" resultType="int">
+		SELECT
+				COUNT(*)
+		FROM
+				ADDRESS
+		WHERE
+				MEMBER_ID = #{memberId}
+	</select>
+	
+   <select id="checkDuplicatedAddress"  parameterType="hashmap" resultType="AddressDTO">
+	SELECT
+				*
+		FROM
+				ADDRESS
+		WHERE
+				MEMBER_ID = #{memberId} AND
+				MEMBER_CD = #{memberCd}
+	</select>
 	
 
 </mapper>

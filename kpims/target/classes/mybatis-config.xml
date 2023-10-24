@@ -12,6 +12,7 @@
 			<typeAlias type="com.application.kpims.admin.shop.dto.ShopDTO" alias="ShopDTO"/>
 			<typeAlias type="com.application.kpims.member.dto.MemberDTO" alias="MemberDTO"/>
 			<typeAlias type="com.application.kpims.mypage.dto.MypageDTO" alias="MypageDTO"/>
+			<typeAlias type="com.application.kpims.member.dto.AddressDTO" alias="AddressDTO"/>
 		
 		</typeAliases>
 		

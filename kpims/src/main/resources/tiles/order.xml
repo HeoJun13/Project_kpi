@@ -10,4 +10,12 @@
 			 		<put-attribute name="contact" value="/WEB-INF/views/CsBody/mypage/myOrderDetail.jsp"/>	
 			 	</definition>
 			 	
+			 	<definition name="/mypage/myAddressBook"  extends="CsbasicLayout">	
+			 		<put-attribute name="contact" value="/WEB-INF/views/CsBody/member/myAddressBook.jsp"/>	
+			 	</definition>
+			 	
+			 	<definition name="/mypage/AddressList"  extends="CsbasicLayout">	
+			 		<put-attribute name="contact" value="/WEB-INF/views/CsBody/member/myAddressBookList.jsp"/>	
+			 	</definition>
+			 	
 			</tiles-definitions>
