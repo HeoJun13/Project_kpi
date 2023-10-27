@@ -98,6 +98,5 @@ public class MemberDTO {
 				+ ", smsstsYn=" + smsstsYn + ", email=" + email + ", emailstsYn=" + emailstsYn + ", joinDt=" + joinDt
 				+ "]";
 	}
-
-
+	
 }

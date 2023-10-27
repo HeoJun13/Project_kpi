@@ -33,13 +33,13 @@
 	   	</select>
 		
 		
-		<select id="selectLogin" resultType="String">
+		<select id="selectLogin" resultType="MemberDTO">
 			SELECT
 					*
 			FROM
 					MEMBER
 			WHERE
-					MEMBER_ID = #{memberId} AND PASSWD = #{passwd}		
+					MEMBER_ID = #{memberId} AND PASSWD = #{passwd}
 		</select>
 		
 		<select id="selectMyCartCnt" resultType="int" parameterType="String">
@@ -50,6 +50,8 @@
 	  		WHERE
 	  				MEMBER_ID = #{memberId}
   	</select>
+  	
+  	<!-- 배송지관리 Mapper -->
   	
   	<insert id="insertAddress" parameterType="AddressDTO" >
 			INSERT INTO
@@ -68,7 +70,36 @@
 			)		
 		</insert>
 		
-		<resultMap type="hashmap" id="addressMap">
+	<select id="selectMyAddress" parameterType="String" resultType="AddressDTO">
+		SELECT
+				*
+		FROM
+				ADDRESS
+		WHERE
+				MEMBER_ID = #{memberId}
+	</select>
+	
+	<select id="selectCountAddress" resultType="int" parameterType="String">
+		SELECT
+				COUNT(*)
+		FROM
+				ADDRESS
+		WHERE
+				MEMBER_ID = #{memberId}
+	</select>
+	
+   <select id="checkDuplicatedAddress"  parameterType="hashmap" resultType="AddressDTO">
+	SELECT
+				*
+		FROM
+				ADDRESS
+		WHERE
+				MEMBER_ID = #{memberId} AND
+				MEMBER_CD = #{memberCd}
+	</select>
+	
+
+		<!--<resultMap type="hashmap" id="addressMap">
   		<result column="ADDRESS_CD"       property="AddressCd"/>
   		<result column="MEMBER_ID"    	  property="memberId"/>
   		<result column="RECIPIENT_NM"     property="recipientNm"/>
@@ -101,26 +132,5 @@
 				A.MEMBER_ID = #{memberId}
 		ORDER BY
 				A.JOIN_DT DESC
-	</select>
-	
-	<select id="selectCountAddress" parameterType="String" resultType="int">
-		SELECT
-				COUNT(*)
-		FROM
-				ADDRESS
-		WHERE
-				MEMBER_ID = #{memberId}
-	</select>
-	
-   <select id="checkDuplicatedAddress"  parameterType="hashmap" resultType="AddressDTO">
-	SELECT
-				*
-		FROM
-				ADDRESS
-		WHERE
-				MEMBER_ID = #{memberId} AND
-				MEMBER_CD = #{memberCd}
-	</select>
-	
-
+	</select>-->
 </mapper>

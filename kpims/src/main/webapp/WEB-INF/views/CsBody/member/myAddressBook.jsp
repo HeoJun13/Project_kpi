@@ -3,7 +3,6 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
-<c:set var="sessionId" value="${sessionScope.memberId }"/>		
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,42 +29,12 @@
 	    }).open();
 	}
 	
-function processToAddress(memberCd) {
-		
-		if ("${sessionId == null}" == "true") {
-			alert("로그인을 진행해주세요.");
-			location.href = "${contextPath }/member/login";
-		}
-		else {
-			
-			$.ajax({
-				url : "${contextPath }/member/addressadd",
-				method : "post",
-				data : {"memberCd" : memberCd},
-				success : function(result) {
-					
-					if (result == "duple") {
-						alert("이미 추가된  주소입니다.");
-					}
-					else {
-						alert("등록되었습니다.");
-					}
-					
-				}
-			})
-			
-		}
-	}
-	
-	
-	
 	
 	
 </script>
 <body>
 
 <!-- Start Hero Section -->
-		<form name="addressForm" action="${contextPath }/member/addressadd" method="post">
 			<div class="container">
 					<div class="row justify-content-between">
 						<div class="col-lg-5">
@@ -96,6 +65,7 @@ function processToAddress(memberCd) {
     </div>
     <!-- Breadcrumb End -->
     
+		<form name="addressForm" action="${contextPath }/member/addressadd" method="post">
     <div class="container">
 		      <div class="row mb-5">
 		        <div class="col-md-12">
@@ -140,7 +110,7 @@ function processToAddress(memberCd) {
 		            </div>
 		          <tr>
 					<td colspan="2" align="left">
-						<a href="javascript:processToAddress(${memberDTO.memberCd });" class="cart-btn"><span class="icon_cart_alt"></span> 저장</a>
+						<button type="submit">저장</button>
 					</td>
 				  </tr>
 		                </div>

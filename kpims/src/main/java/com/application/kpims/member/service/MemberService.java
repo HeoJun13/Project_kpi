@@ -17,11 +17,11 @@ import com.application.kpims.member.dto.MemberDTO;
 public interface MemberService {
 	
 	public void registerMember(MemberDTO memberDTO) throws Exception;
-	public String login(MemberDTO memberDTO, HttpSession session) throws Exception;
+	public MemberDTO login(MemberDTO memberDTO, HttpSession session) throws Exception;
 	public int getMyCartCnt(String memberId);
 	public int checkId(String memberId);
 	public void addressbook(AddressDTO addressDTO) throws Exception;
-	public List<Map<String,Object>> getMyAddressList(String memberId) throws Exception;
+	public List<MemberDTO> getMyAddressList(String memberId) throws Exception;
 	public int countAddressList(String memberId) throws Exception;
 	public boolean checkDuplicatedAddress(AddressDTO addressDTO) throws Exception;
 

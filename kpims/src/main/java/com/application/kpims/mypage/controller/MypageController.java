@@ -9,12 +9,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.application.kpims.member.dto.MemberDTO;
 import com.application.kpims.member.service.MemberService;
 import com.application.kpims.mypage.dto.MypageDTO;
 import com.application.kpims.mypage.service.MypageService;
@@ -85,7 +87,9 @@ public class MypageController {
 		session.setAttribute("myCartCnt" , memberService.getMyCartCnt((String)session.getAttribute("memberId")));
 		
 		String jsScript = "<script>";
-		   jsScript += "alert('장바구니 품목이 삭제되었습니다.'); ";
+		   jsScript += "alert('장바구"
+		   		+ ""
+		   		+ "니 품목이 삭제되었습니다.'); ";
 		   jsScript += "location.href='cartlist'";
 		   jsScript += "</script>";
 		   
@@ -95,6 +99,37 @@ public class MypageController {
 		return new ResponseEntity<Object>(jsScript, responseHeaders, HttpStatus.OK);
 		
 	}
+	
+	@GetMapping("/myInfo")
+	public ModelAndView myInfo(@RequestParam(value = "memberId" , required=false) String memberId) {
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/mypage/myinfo");
+		mv.addObject("memberDTO", mypageService.getMyInfo(memberId));
+		return mv;
+	}
+	
+	@PostMapping("/modifyInfo")
+	public ResponseEntity<Object> modifyInfo(MemberDTO memberDTO , HttpServletRequest request) throws Exception {
+
+		mypageService.modifyMyInfo(memberDTO);
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		String jsScript  = "<script>";
+				jsScript += " alert('수정되었습니다.');";
+				jsScript += " location.href='" + request.getContextPath() + "/mypage/myInfo?memberId=" + memberDTO.getMemberId() +  "';";
+				jsScript += " </script>";
+		
+		return new ResponseEntity<Object>(jsScript, responseHeaders, HttpStatus.OK);
+		
+	}
+	
+	 
+	
+	
+	
 	
 	
 	

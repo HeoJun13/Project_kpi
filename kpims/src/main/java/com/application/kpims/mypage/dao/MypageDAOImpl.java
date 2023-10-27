@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.application.kpims.member.dto.MemberDTO;
 import com.application.kpims.mypage.dto.MypageDTO;
 
 
@@ -35,8 +36,17 @@ public class MypageDAOImpl implements MypageDAO {
 		return sqlSession.selectOne("mypage.selectCountMyCart" , memberId);
 	}
 	@Override
+	
 	public void deleteCart(int[] deleteCartCdList) {
 		sqlSession.delete("mypage.deleteCart", deleteCartCdList);
+	}
+	@Override
+	public MemberDTO selectOneMyInfo(String memberId) {
+		return sqlSession.selectOne("mypage.selectOneMyInfo", memberId);
+	}
+	@Override
+	public void updateMyInfo(MemberDTO memberDTO) {
+		sqlSession.update("mypage.updateMyInfo", memberDTO);		
 	}
 
 }

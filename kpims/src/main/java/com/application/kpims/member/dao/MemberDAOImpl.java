@@ -28,7 +28,7 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public String selectLogin(MemberDTO memberDTO) throws Exception {
+	public MemberDTO selectLogin(MemberDTO memberDTO) throws Exception {
 		return sqlSession.selectOne("member.selectLogin", memberDTO);
 	}
 
@@ -44,7 +44,7 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public List<Map<String, Object>> selectMyAddress(String memberId) {
+	public List<MemberDTO> selectMyAddress(String memberId) {
 		return sqlSession.selectList("member.selectMyAddress", memberId);
 	}
 

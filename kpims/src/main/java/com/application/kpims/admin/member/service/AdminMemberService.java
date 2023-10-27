@@ -8,7 +8,7 @@ import com.application.kpims.member.dto.MemberDTO;
 
 public interface AdminMemberService {
 
-	public String adminlogin(AdminMemberDTO adminMemberDTO , HttpSession session) throws Exception;
+	public AdminMemberDTO adminlogin(AdminMemberDTO adminMemberDTO , HttpSession session) throws Exception;
 	public void logout(HttpSession sessiong);
 	public List<MemberDTO> getMemberList();
 }

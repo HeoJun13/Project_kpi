@@ -200,7 +200,6 @@
 
 		        </div>
 		      </div>
-		      <!-- </form> -->
 		    </div>
 
 		<!-- Start Footer Section -->

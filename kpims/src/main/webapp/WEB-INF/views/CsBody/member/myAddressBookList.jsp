@@ -40,12 +40,11 @@
         </div>
     </div>
     <!-- Breadcrumb End -->
-		   <div class="container">
+		   <div class="container" align="center">
               <div class="row mb-5">
                 <form class="col-md-12">
                   <div class="site-blocks-table">
                     <table class="table">
-		        
 		            <tbody>
 		            <c:choose>
                     		<c:when test="${empty addresslist}">
@@ -68,7 +67,7 @@
 						    </div>
 						    <button class="address-card__button--edit _addressBookFormSubmit" type="submit">
                    			<span class="addressbook__text">수정</span>
-             				  </button>
+             				 </button>
 		               </c:forEach>
 		               </c:otherwise>
                    </c:choose>

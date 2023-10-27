@@ -22,30 +22,31 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarsFurni" >
+					<c:choose>
+                    		<c:when test="${sessionScope.memberId eq null }">
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 					    <li><a class="nav-link" href="${contextPath }/customer/project/main">Home</a>
 						<li><a class="nav-link" href="${contextPath }/shop/list">사무용의자</a></li>
-						<li><a class="nav-link" href="about.html">About us</a></li>
-					</ul>
-					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-3">
-						<li><a class="nav-link" href="blog.html">회원관리</a>
-						<ul class="dropdown">
-                          <li><a href="#" class="text-gray-dark _fade_link">정보 수정</a></li>
-                         <li class="">
-						   <a href="/shop_mypage/?m2=point_list" class="text-gray-dark _fade_link">포인트</a>
-						</li>
-                       	</ul>
-                       	
+						<li><a class="nav-link" href="${contextPath }/mypage/myInfo">회원관리</a>
 						</li>
 						<li><a class="nav-link" href="${contextPath}/member/addresslist">배송지관리</a>
-						<ul class="dropdown">
-                          <li class="">
-							<a href="/shop_mypage/?m2=order" class="text-gray-dark _fade_link">주문 <span class="hidden-xs">조회</span></a>
-						</li>
-                          <li><a href="#" class="text-gray-dark _fade_link">취소/교환/반품</a></li>
-                       	</ul>
                        	</li>
+                        <li><a href="#" class="nav-link">취소/교환/반품</a></li>
 					</ul>
+					
+					
+				</c:when>
+				<c:otherwise>
+				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+					    <li><a class="nav-link" href="${contextPath }/customer/project/main">Home</a>
+						<li><a class="nav-link" href="${contextPath }/shop/list">사무용의자</a></li>
+						<li><a class="nav-link" href="${contextPath }/mypage/myInfo?memberId=${memberDTO.memberId}">회원관리</a>
+						</li>
+						<li><a class="nav-link" href="${contextPath}/member/addresslist?memberId=${memberDTO.memberId}">배송지관리</a>
+                        <li><a href="#" class="nav-link">취소/교환/반품</a></li>
+					</ul>
+				</c:otherwise>
+			</c:choose>
 					<c:choose>
                     		<c:when test="${sessionScope.memberId eq null }">
 		                        <div class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-3">
@@ -89,13 +90,10 @@
 						</a>
 						</li>
 						
-						<li><a class="nav-link" href="contact.html">커뮤니티</a>
-						<ul class="dropdown">
-                          <li><a href="#" class="text-gray-dark _fade_link">1:1 문의</a></li>
-                          <li>
-							<a href="javascript:" onclick="SITE_MEMBER.openGoodbye();" class="text-gray-dark _fade_link">회원탈퇴</a>
-						</li>
-                       	</ul>
+					</ul>
+					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+					<li>
+						<a class="nav-link" href="contact.html">커뮤니티</a>
 						</li>
 					</ul>
 				</div>

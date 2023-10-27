@@ -3,7 +3,6 @@ package com.application.kpims.member.service;
 
 
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -31,8 +30,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
-	public String login(MemberDTO memberDTO, HttpSession session) throws Exception {
-		String name = memberDAO.selectLogin(memberDTO);
+	public MemberDTO login(MemberDTO memberDTO, HttpSession session) throws Exception {
+		MemberDTO name = memberDAO.selectLogin(memberDTO);
 		if (name != null) { //세션 변수 저장
 			session.setAttribute("memberId", memberDTO.getMemberId());
 			session.setAttribute("name", name);
@@ -60,7 +59,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public List<Map<String, Object>> getMyAddressList(String memberId) {
+	public List<MemberDTO> getMyAddressList(String memberId) {
 		return memberDAO.selectMyAddress(memberId);
 	}
 

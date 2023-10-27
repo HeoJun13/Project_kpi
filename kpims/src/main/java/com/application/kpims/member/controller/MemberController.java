@@ -1,6 +1,8 @@
 package com.application.kpims.member.controller;
 
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -9,6 +11,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -71,7 +74,7 @@ public class MemberController {
 	
 	@PostMapping("/login")
 	public ModelAndView login( @ModelAttribute MemberDTO memberDTO, HttpSession session) throws Exception {
-		String name = memberService.login(memberDTO , session);
+		MemberDTO name = memberService.login(memberDTO , session);
 		ModelAndView mv = new ModelAndView();
 		if (name != null) { //로그인 성공시
 			mv.setViewName("/costomer/main");
@@ -113,35 +116,39 @@ public class MemberController {
 	}
 	
 	@PostMapping("/addressadd")
-	public @ResponseBody String addressadd(@RequestParam ("memberCd") int memberCd , HttpServletRequest request) throws Exception {
+	public ResponseEntity<Object> addressadd(AddressDTO addressDTO , HttpServletRequest request) throws Exception {
 		
 		HttpSession session = request.getSession();
 		String memberId = (String)session.getAttribute("memberId");
 		
-		AddressDTO addressDTO = new AddressDTO();
 		addressDTO.setMemberId(memberId);
-		addressDTO.setMemberCd(memberCd);
 		
-		String result = "duple";
-		if (!memberService.checkDuplicatedAddress(addressDTO)) {
-			 memberService.addressbook(addressDTO);
-		}
+		memberService.addressbook(addressDTO);
+		memberService.checkDuplicatedAddress(addressDTO);
+		
+		String message  = "<script>";
+		   message += " alert('등록되었습니다.');";
+		   message += " location.href='" + request.getContextPath() + "/member/addresslist';";
+		   message += " </script>";
+
+		   		HttpHeaders responseHeaders = new HttpHeaders();
+		   		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
 		 
-	return result;
+	return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
 	
 	}
 	
 	@GetMapping("/addresslist")
-	public ModelAndView addresslist(HttpServletRequest request) throws Exception {
+	public String addresslist(ModelAndView mv  , Model model , HttpServletRequest request) throws Exception{
 		
 		HttpSession session = request.getSession();
 		
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/mypage/AddressList");
-		
 		String memberId = (String)session.getAttribute("memberId");
-		mv.addObject("addresslist" , memberService.getMyAddressList(memberId));
+		List<MemberDTO> list = memberService.getMyAddressList(memberId);
 		mv.addObject("countAddressList", memberService.countAddressList(memberId));
-		return mv;
+		model.addAttribute("addresslist", list);
+		
+		return "/mypage/AddressList";
+		
 	}
 }

@@ -3,7 +3,6 @@ package com.application.kpims.admin.member.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +34,7 @@ public class AdminMemberController {
 	
 	@PostMapping("/login")
 	public ModelAndView login( @ModelAttribute AdminMemberDTO adminMemberDTO, HttpSession session) throws Exception {
-		String name = adminMemberService.adminlogin(adminMemberDTO , session);
+		AdminMemberDTO name = adminMemberService.adminlogin(adminMemberDTO , session);
 		ModelAndView mv = new ModelAndView();
 		if (name != null) { //로그인 성공시
 			mv.setViewName("/project/main");

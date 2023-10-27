@@ -10,7 +10,7 @@ public interface MemberDAO {
 
 	public void insertMember(MemberDTO memberDTO) throws Exception;
 
-	public String selectLogin(MemberDTO memberDTO) throws Exception;
+	public MemberDTO selectLogin(MemberDTO memberDTO) throws Exception;
 
 	public int selectMyCartCnt(String memberId);
 
@@ -18,7 +18,7 @@ public interface MemberDAO {
 
 	public void insertAddress(AddressDTO addressDTO) throws Exception;
 
-	public List<Map<String, Object>> selectMyAddress(String memberId);
+	public List<MemberDTO> selectMyAddress(String memberId);
 
 	public int selectCountAddress(String memberId);
 

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.application.kpims.member.dto.MemberDTO;
 import com.application.kpims.mypage.dao.MypageDAO;
 import com.application.kpims.mypage.dto.MypageDTO;
 
@@ -39,6 +40,19 @@ public class MypageServiceImpl implements MypageService{
 	@Override
 	public void removeCart(int[] deleteCartCdList) {
 		mypageDAO.deleteCart(deleteCartCdList);
+	}
+
+	@Override
+	public MemberDTO getMyInfo(String memberId) {
+		return mypageDAO.selectOneMyInfo(memberId);
+	}
+
+	@Override
+	public void modifyMyInfo(MemberDTO memberDTO) {
+		if (memberDTO.getSmsstsYn() == null) memberDTO.setSmsstsYn("N"); 
+		if (memberDTO.getEmailstsYn() == null) memberDTO.setEmailstsYn("N");
+		mypageDAO.updateMyInfo(memberDTO);
+		
 	}
 
 

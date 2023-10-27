@@ -87,6 +87,54 @@
 				#{cartCd}
 		</foreach>
 	</delete>
+	
+	
+	<select id="selectOneMyInfo" parameterType="String" resultType="MemberDTO">
+		SELECT
+				*
+		FROM
+				MEMBER
+		WHERE
+				MEMBER_ID = #{memberId}
+	</select>
+	
+	<update id="updateMyInfo" parameterType="MemberDTO">
+		UPDATE 
+	   			MEMBER
+	   <set> 
+	      <if test='memberId != null and memberId != ""'>
+	        MEMBER_ID = #{memberId},
+	      </if>
+	      <if test='nickname != null and nickname != ""'>
+	        NICKNAME = #{nickname},
+	      </if>
+	      <if test='passwd != null and passwd != ""'>
+	        PASSWD = #{passwd},
+	      </if>
+	      <if test='memberNm != null and memberNm != ""'>
+	        MEMBER_NM = #{memberNm},
+	      </if>
+	      <if test='sex != null and sex != ""'>
+	        SEX = #{sex},
+	      </if>
+	      <if test='hp != null and hp != ""'>
+	        HP = #{hp},
+	      </if>
+	      <if test='smsstsYn != null and smsstsYn != ""'>
+	        SMSSTS_YN = #{smsstsYn},
+	      </if>
+	      <if test='email != null and email != ""'>
+	        EMAIL = #{email},
+	      </if>
+	      <if test='emailstsYn != null and emailstsYn != ""'>
+	        EMAILSTS_YN = #{emailstsYn},
+	      </if>
+	    </set>
+		WHERE 
+				MEMBER_ID = #{memberId}
+	</update>
+	
+	
 
 
 </mapper>
